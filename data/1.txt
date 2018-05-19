@@ -1,0 +1,2023 @@
+commit 95efe033c76fb45dfde42dfb8aa4c39ad9054d52
+Author: nongliuhua <nongliuhua@uritest.com.cn>
+Date:   Tue May 15 19:57:28 2018 +0800
+
+    sdfsdf
+
+ Action/action.cpp                         |  348 +--
+ Action/action.h                           |  118 +-
+ Action/globalaction.cpp                   |   28 +-
+ Action/globalaction.h                     |   60 +-
+ ChildView/EditGroup.cpp                   |   88 +-
+ ChildView/EditGroup.h                     |   84 +-
+ ChildView/cameraview.cpp                  |  658 +++---
+ ChildView/cameraview.h                    |  184 +-
+ ChildView/clabel.cpp                      |   72 +-
+ ChildView/clabel.h                        |   66 +-
+ ChildView/common.h                        |  134 +-
+ ChildView/customframe.h                   |  156 +-
+ ChildView/customlineedit.cpp              |  194 +-
+ ChildView/customlineedit.h                |  252 +--
+ ChildView/serialview.cpp                  | 1074 ++++-----
+ ChildView/serialview.h                    |  196 +-
+ ChildView/udpvideothread.h                |  140 +-
+ ChildView/ui_camera.h                     |  416 ++--
+ ChildView/ui_serial.h                     |  548 ++---
+ ChildView/ui_window.h                     |  330 +--
+ ChildView/videoform.h                     |  236 +-
+ ChildView/videothread.cpp                 |  300 +--
+ ChildView/videothread.h                   |  148 +-
+ ChildView/windowview.cpp                  |  646 +++---
+ ChildView/windowview.h                    |  174 +-
+ Client/Generate.cpp                       |  104 +-
+ Client/Generate.h                         |  118 +-
+ Client/JsonScanner.cpp                    |  338 +--
+ Client/JsonScanner.h                      |  192 +-
+ Client/Scanner.cpp                        |  180 +-
+ Client/Scanner.h                          |   86 +-
+ Client/SocketClient.cpp                   |  678 +++---
+ Client/SocketClient.h                     |  212 +-
+ Client/UDPSocket.cpp                      |  286 +--
+ Client/UDPSocket.h                        |  152 +-
+ Client/clientfactory.cpp                  |   36 +-
+ Client/clientfactory.h                    |   52 +-
+ CustomTabWidget/CustomTabWidget.cpp       |  270 +--
+ CustomTabWidget/CustomTabWidget.h         |   88 +-
+ CustomTabWidget/custlabel.cpp             |   22 +-
+ CustomTabWidget/custlabel.h               |   40 +-
+ CustomTabWidget/tabcomb.cpp               |   60 +-
+ CustomTabWidget/tabcomb.cpp.Ql3922        |   22 +-
+ CustomTabWidget/tabcomb.h                 |   46 +-
+ Dialog/appthread.cpp                      |  156 +-
+ Dialog/appthread.h                        |   74 +-
+ Dialog/modeldialog.cpp                    |  488 ++--
+ Dialog/modeldialog.h                      |  146 +-
+ Dialog/ui_modeldialog.h                   |  234 +-
+ Helper/messagehelper.cpp                  |   72 +-
+ Helper/messagehelper.h                    |   56 +-
+ ImageSelectedView/RectUtils.h             |  166 +-
+ ImageSelectedView/imagebufftrans.h        |  196 +-
+ ImageSelectedView/imageform.cpp           |  462 ++--
+ ImageSelectedView/imageform.h             |  184 +-
+ ImageSelectedView/imagelabel.cpp          |  392 ++--
+ ImageSelectedView/imagelabel.h            |  136 +-
+ ImageSelectedView/ui_image.h              |  148 +-
+ LeftWidget/leftwidget.cpp                 |   96 +-
+ LeftWidget/leftwidget.h                   |   74 +-
+ LeftWidget/ui_left.h                      |  154 +-
+ Login/logindialog.cpp                     |   50 +-
+ Login/logindialog.h                       |   50 +-
+ Login/ui_logindialog.h                    |  104 +-
+ QTConfig.pro                              |  358 +--
+ QTConfig_resource.rc                      |   74 +-
+ QtWaitingSpinner/LICENSE                  |   42 +-
+ QtWaitingSpinner/waitingspinnerwidget.cpp |  554 ++---
+ QtWaitingSpinner/waitingspinnerwidget.h   |  228 +-
+ SerialDialog/serialdialog.cpp             |  984 ++++-----
+ SerialDialog/serialdialog.h               |  106 +-
+ SerialDialog/serialdialog.ui              | 1002 ++++-----
+ TabWidget/customtabstyle.h                |  164 +-
+ TabWidget/htabwidget.cpp                  |   48 +-
+ TabWidget/htabwidget.h                    |   66 +-
+ TabWidget/idtable.cpp                     |  118 +-
+ TitleBar/titlebar.cpp                     |  300 +--
+ TitleBar/titlebar.h                       |  124 +-
+ Video/SocketServer.cpp                    |  612 ++---
+ Video/SocketServer.h                      |  224 +-
+ Video/buffertransfer.cpp                  |  124 +-
+ Video/buffertransfer.h                    |   66 +-
+ Video/framepackage.h                      |   58 +-
+ Video/imageutils.cpp                      |  336 +--
+ Video/imageutils.h                        |   50 +-
+ Video/videobuffer.cpp                     |  266 +--
+ Video/videobuffer.h                       |   90 +-
+ Video/videodescriptorthread.cpp           |   42 +-
+ Video/videodescriptorthread.h             |   50 +-
+ Video/videonode.cpp                       |  218 +-
+ Video/videonode.h                         |   76 +-
+ Video/videorecipient.cpp                  |  178 +-
+ Video/videorecipient.h                    |   90 +-
+ Video/videoserver.cpp                     |  488 ++--
+ Video/videoserver.h                       |   82 +-
+ app.cpp                                   |   42 +-
+ app.h                                     |  126 +-
+ childview.h                               |   42 +-
+ global.qss                                |  440 ++--
+ globalcommon.h                            |   62 +-
+ idtable.h                                 |  162 +-
+ imageselectedview.h                       |   38 +-
+ jsoncpp/json/autolink.h                   |   38 +-
+ jsoncpp/json/config.h                     |   86 +-
+ jsoncpp/json/features.h                   |   84 +-
+ jsoncpp/json/forwards.h                   |   78 +-
+ jsoncpp/json/json.h                       |   20 +-
+ jsoncpp/json/reader.h                     |  392 ++--
+ jsoncpp/json/value.h                      | 2138 +++++++++---------
+ jsoncpp/json/writer.h                     |  348 +--
+ jsoncpp/json_batchallocator.h             |  250 +--
+ jsoncpp/json_internalarray.inl            |  896 ++++----
+ jsoncpp/json_internalmap.inl              | 1214 +++++-----
+ jsoncpp/json_reader.cpp                   | 1770 +++++++--------
+ jsoncpp/json_value.cpp                    | 3440 ++++++++++++++---------------
+ jsoncpp/json_valueiterator.inl            |  584 ++---
+ jsoncpp/json_writer.cpp                   | 1664 +++++++-------
+ log4qt.properties                         |   54 +-
+ log4qt/CMakeLists.txt                     |  478 ++--
+ log4qt/appender.cpp                       |   44 +-
+ log4qt/appender.h                         |  216 +-
+ log4qt/appenderskeleton.cpp               |  488 ++--
+ log4qt/appenderskeleton.h                 |  410 ++--
+ log4qt/asyncappender.cpp                  |  224 +-
+ log4qt/asyncappender.h                    |  192 +-
+ log4qt/basicconfigurator.cpp              |  140 +-
+ log4qt/basicconfigurator.h                |  110 +-
+ log4qt/binaryfileappender.cpp             |  450 ++--
+ log4qt/binaryfileappender.h               |  286 +--
+ log4qt/binarylayout.cpp                   |   60 +-
+ log4qt/binarylayout.h                     |  124 +-
+ log4qt/binarylogger.cpp                   |   94 +-
+ log4qt/binarylogger.h                     |  142 +-
+ log4qt/binaryloggingevent.cpp             |  136 +-
+ log4qt/binaryloggingevent.h               |  106 +-
+ log4qt/binarylogstream.cpp                |   94 +-
+ log4qt/binarylogstream.h                  |   56 +-
+ log4qt/binarytotextlayout.cpp             |   74 +-
+ log4qt/binarytotextlayout.h               |   58 +-
+ log4qt/binarywriterappender.cpp           |  310 +--
+ log4qt/binarywriterappender.h             |  108 +-
+ log4qt/colorconsoleappender.cpp           |  560 ++---
+ log4qt/colorconsoleappender.h             |  180 +-
+ log4qt/consoleappender.cpp                |  266 +--
+ log4qt/consoleappender.h                  |  238 +-
+ log4qt/dailyfileappender.cpp              |  222 +-
+ log4qt/dailyfileappender.h                |  144 +-
+ log4qt/dailyrollingfileappender.cpp       |  550 ++---
+ log4qt/dailyrollingfileappender.h         |  304 +--
+ log4qt/databaseappender.cpp               |  338 +--
+ log4qt/databaseappender.h                 |  260 +--
+ log4qt/databaselayout.cpp                 |  372 ++--
+ log4qt/databaselayout.h                   |  214 +-
+ log4qt/fileappender.cpp                   |  498 ++---
+ log4qt/fileappender.h                     |  392 ++--
+ log4qt/helpers/appenderattachable.cpp     |  184 +-
+ log4qt/helpers/appenderattachable.h       |  196 +-
+ log4qt/helpers/binaryclasslogger.cpp      |   52 +-
+ log4qt/helpers/binaryclasslogger.h        |   54 +-
+ log4qt/helpers/classlogger.cpp            |  100 +-
+ log4qt/helpers/classlogger.h              |  164 +-
+ log4qt/helpers/configuratorhelper.cpp     |  206 +-
+ log4qt/helpers/configuratorhelper.h       |  346 +--
+ log4qt/helpers/datetime.cpp               |  122 +-
+ log4qt/helpers/datetime.h                 |  330 +--
+ log4qt/helpers/dispatcher.cpp             |  112 +-
+ log4qt/helpers/dispatcher.h               |  120 +-
+ log4qt/helpers/factory.cpp                | 1214 +++++-----
+ log4qt/helpers/factory.h                  |  872 ++++----
+ log4qt/helpers/initialisationhelper.cpp   |  260 +--
+ log4qt/helpers/initialisationhelper.h     |  486 ++--
+ log4qt/helpers/logerror.cpp               |  566 ++---
+ log4qt/helpers/logerror.h                 | 1108 +++++-----
+ log4qt/helpers/optionconverter.cpp        |  538 ++---
+ log4qt/helpers/optionconverter.h          |  248 +--
+ log4qt/helpers/patternformatter.cpp       | 1428 ++++++------
+ log4qt/helpers/patternformatter.h         |  286 +--
+ log4qt/helpers/properties.cpp             |  620 +++---
+ log4qt/helpers/properties.h               |  244 +-
+ log4qt/hierarchy.cpp                      |  330 +--
+ log4qt/hierarchy.h                        |  198 +-
+ log4qt/layout.cpp                         |  114 +-
+ log4qt/layout.h                           |  266 +--
+ log4qt/level.cpp                          |  312 +--
+ log4qt/level.h                            |  288 +--
+ log4qt/log4qt.h                           | 1152 +++++-----
+ log4qt/log4qt.pri                         |  380 ++--
+ log4qt/log4qt.pro                         |   82 +-
+ log4qt/log4qt.qbs                         |  408 ++--
+ log4qt/log4qtshared.h                     |   38 +-
+ log4qt/log4qtsharedptr.h                  |   80 +-
+ log4qt/logger.cpp                         |  716 +++---
+ log4qt/logger.h                           |  834 +++----
+ log4qt/loggerrepository.cpp               |   68 +-
+ log4qt/loggerrepository.h                 |  126 +-
+ log4qt/loggingevent.cpp                   |  636 +++---
+ log4qt/loggingevent.h                     |  492 ++---
+ log4qt/logmanager.cpp                     | 1036 ++++-----
+ log4qt/logmanager.h                       |  744 +++----
+ log4qt/logstream.cpp                      |   98 +-
+ log4qt/logstream.h                        |  130 +-
+ log4qt/mainthreadappender.cpp             |  164 +-
+ log4qt/mainthreadappender.h               |  174 +-
+ log4qt/mdc.cpp                            |  130 +-
+ log4qt/mdc.h                              |  170 +-
+ log4qt/ndc.cpp                            |  208 +-
+ log4qt/ndc.h                              |  150 +-
+ log4qt/patternlayout.cpp                  |  206 +-
+ log4qt/patternlayout.h                    |  268 +--
+ log4qt/propertyconfigurator.cpp           | 1130 +++++-----
+ log4qt/propertyconfigurator.h             |  298 +--
+ log4qt/qmllogger.cpp                      |  224 +-
+ log4qt/qmllogger.h                        |  182 +-
+ log4qt/rollingbinaryfileappender.cpp      |  494 ++---
+ log4qt/rollingbinaryfileappender.h        |  192 +-
+ log4qt/rollingfileappender.cpp            |  256 +--
+ log4qt/rollingfileappender.h              |  278 +--
+ log4qt/signalappender.cpp                 |   90 +-
+ log4qt/signalappender.h                   |  128 +-
+ log4qt/simplelayout.cpp                   |   86 +-
+ log4qt/simplelayout.h                     |  156 +-
+ log4qt/simpletimelayout.cpp               |   94 +-
+ log4qt/simpletimelayout.h                 |  122 +-
+ log4qt/spi/filter.cpp                     |  104 +-
+ log4qt/spi/filter.h                       |  174 +-
+ log4qt/systemlogappender.cpp              |  346 +--
+ log4qt/systemlogappender.h                |  150 +-
+ log4qt/telnetappender.cpp                 |  426 ++--
+ log4qt/telnetappender.h                   |  376 ++--
+ log4qt/ttcclayout.cpp                     |  268 +--
+ log4qt/ttcclayout.h                       |  416 ++--
+ log4qt/varia/binaryeventfilter.cpp        |   60 +-
+ log4qt/varia/binaryeventfilter.h          |   76 +-
+ log4qt/varia/debugappender.cpp            |  138 +-
+ log4qt/varia/debugappender.h              |  188 +-
+ log4qt/varia/denyallfilter.cpp            |   74 +-
+ log4qt/varia/denyallfilter.h              |  120 +-
+ log4qt/varia/levelmatchfilter.cpp         |  106 +-
+ log4qt/varia/levelmatchfilter.h           |  200 +-
+ log4qt/varia/levelrangefilter.cpp         |  114 +-
+ log4qt/varia/levelrangefilter.h           |  244 +-
+ log4qt/varia/listappender.cpp             |  184 +-
+ log4qt/varia/listappender.h               |  276 +--
+ log4qt/varia/nullappender.cpp             |  104 +-
+ log4qt/varia/nullappender.h               |  130 +-
+ log4qt/varia/stringmatchfilter.cpp        |  110 +-
+ log4qt/varia/stringmatchfilter.h          |  194 +-
+ log4qt/wdcappender.cpp                    |   88 +-
+ log4qt/wdcappender.h                      |   54 +-
+ log4qt/writerappender.cpp                 |  438 ++--
+ log4qt/writerappender.h                   |  328 +--
+ log4qt/xmllayout.cpp                      |  122 +-
+ log4qt/xmllayout.h                        |   50 +-
+ main.cpp                                  |   98 +-
+ mainwindow.cpp                            |  344 +--
+ mainwindow.h                              |  100 +-
+ mainwindow.ui                             |   86 +-
+ readm.txt                                 |    4 +-
+ rightview.h                               |   26 +-
+ src.qrc                                   |   66 +-
+ tabwidget.h                               |   40 +-
+ testutils.h                               |   64 +-
+ ui_main.h                                 |  388 ++--
+ user.cpp                                  |   54 +-
+ user.h                                    |   36 +-
+ 265 files changed, 36871 insertions(+), 36871 deletions(-)
+
+commit e14afb220502243dd2001046d84415988bdaab08
+Author: nongliuhua <nongliuhua@uritest.com.cn>
+Date:   Mon May 14 12:11:58 2018 +0800
+
+    test tu
+
+ readm.txt | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit dc64c9c0f0cf1034171a27d30524e8d91e344778
+Author: nongliuhua <nongliuhua@uritest.com.cn>
+Date:   Mon May 14 12:11:09 2018 +0800
+
+    learn git  and  test
+
+ readm.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 69fc9886b5b87cdab490ec64c879e09632202847
+Author: jacket <jacket.1995@qq.com>
+Date:   Thu May 3 16:00:27 2018 +0800
+
+    补上log4qt
+
+ log4qt.properties | 27 +++++++++++++++++++++++++++
+ 1 file changed, 27 insertions(+)
+
+commit 4c8a3b315dcefafef1e63f105852c6efce5574b0
+Author: jacket <jacket.1995@qq.com>
+Date:   Thu May 3 15:59:47 2018 +0800
+
+    log4qt配置文件也用资源管理
+
+ main.cpp | 2 +-
+ src.qrc  | 3 +++
+ 2 files changed, 4 insertions(+), 1 deletion(-)
+
+commit 7077a96c32a9ae5b3f856f6ea1de0a1fcc06953b
+Author: jacket <jacket.1995@qq.com>
+Date:   Thu May 3 15:10:34 2018 +0800
+
+    添加获得本地IP的函数接口(不太好，获得的IP没有网卡的信息，也很难判断那个是有线网卡的信息)
+    
+    作用：为了把当前IP发给外部的作用
+    
+    实现了动态Ip的视频模式
+
+ ChildView/videocontrolthread.cpp | 60 +++++++++++++++++++++++++++++++++++++---
+ ChildView/videocontrolthread.h   |  2 ++
+ 2 files changed, 58 insertions(+), 4 deletions(-)
+
+commit 26e2fbde0d22dbdf87504ab76e07e234bfd67a47
+Author: jacket <jacket.1995@qq.com>
+Date:   Thu May 3 11:03:24 2018 +0800
+
+    优化视频的操作
+    修复排除当视频流启动中，断开网线导致的界面卡死
+
+ ChildView/videoform.cpp  |  2 +-
+ Video/videorecipient.cpp | 11 +++++++++--
+ Video/videorecipient.h   |  1 +
+ Video/videoserver.cpp    | 28 +++++++++++++++++++++++-----
+ Video/videoserver.h      |  2 ++
+ 5 files changed, 36 insertions(+), 8 deletions(-)
+
+commit ab2e1442edbe77eca6f0451061959d2715ba48ed
+Author: jacket <jacket.1995@qq.com>
+Date:   Wed May 2 16:09:13 2018 +0800
+
+    保存图片按钮
+
+ ChildView/cameraview.cpp | 2 ++
+ ChildView/cameraview.h   | 4 ++--
+ ChildView/ui_camera.h    | 7 +++++++
+ 3 files changed, 11 insertions(+), 2 deletions(-)
+
+commit 84e505313cdc65abe6f7a26d28818c1bd4104ccd
+Author: jacket <jacket.1995@qq.com>
+Date:   Wed May 2 15:39:46 2018 +0800
+
+    希望让windowview更新机制更人性化，失败了
+
+ ImageSelectedView/imagelabel.cpp | 34 +++++++++++++++++++++++-----------
+ 1 file changed, 23 insertions(+), 11 deletions(-)
+
+commit 396240fef9a51bdcfaec9cc828aed9ad8953139c
+Author: jacket <jacket.1995@qq.com>
+Date:   Sun Apr 29 16:21:35 2018 +0800
+
+    修复串口忘记关闭的问题
+
+ mainwindow.cpp | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit fd434cd2775e0a1d621428c55ce886a61c97980c
+Author: jacket <jacket.1995@qq.com>
+Date:   Sun Apr 29 15:56:39 2018 +0800
+
+    新增提示
+
+ ChildView/ui_serial.h | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+commit 9d5cf53a1802aacfebdfc8c58d538d058313d189
+Author: jacket <jacket.1995@qq.com>
+Date:   Sun Apr 29 15:08:20 2018 +0800
+
+    减少监听的间隔
+
+ Dialog/appthread.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit c6d7e41d7d74ce1ec57252d87b3712208e6ca3d2
+Author: jacket <jacket.1995@qq.com>
+Date:   Mon Apr 23 17:10:05 2018 +0800
+
+    突然出现上传参数不可用的情况，修复一下
+    
+    原因很奇怪，action内修改部分连起来就不行了
+
+ Action/action.cpp        | 5 +++--
+ ChildView/cameraview.cpp | 3 ++-
+ ChildView/cameraview.h   | 3 ++-
+ 3 files changed, 7 insertions(+), 4 deletions(-)
+
+commit 1d44101b562a4f76d603131db6559997cc2ad361
+Author: jacket <jacket.1995@qq.com>
+Date:   Tue Apr 17 15:55:51 2018 +0800
+
+    资源配置文件（补）
+
+ QTConfig_resource.rc | 37 +++++++++++++++++++++++++++++++++++++
+ 1 file changed, 37 insertions(+)
+
+commit 86e9bb23477827643a6f47dd33c2e85fc8c06e6c
+Author: jacket <jacket.1995@qq.com>
+Date:   Tue Apr 17 15:55:38 2018 +0800
+
+    权限管理
+
+ ChildView/cameraview.cpp |  5 +++++
+ ChildView/serialview.cpp |  5 +++++
+ mainwindow.cpp           |  6 ++++--
+ user.cpp                 | 27 +++++++++++++++++++++++++++
+ user.h                   | 18 ++++++++++++++++++
+ 5 files changed, 59 insertions(+), 2 deletions(-)
+
+commit 66d8440e682f08e40b9d20f21edba10319eae655
+Author: jacket <jacket.1995@qq.com>
+Date:   Tue Apr 17 15:47:43 2018 +0800
+
+    添加标题
+
+ QTConfig.pro          | 12 ++++++++++++
+ TitleBar/titlebar.cpp | 17 +++++++++++++++--
+ main.cpp              |  2 +-
+ src.qrc               |  1 +
+ 4 files changed, 29 insertions(+), 3 deletions(-)
+
+commit 7683a5da67d3ca056d691d756472bd1f888f7fac
+Author: jacket <jacket.1995@qq.com>
+Date:   Mon Apr 16 16:43:54 2018 +0800
+
+    修复在莫秋全电脑上不能开启视频的问题
+    
+    发现设了该参数后会一直阻塞
+
+ Client/SocketClient.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 72333d102fb7cc898c2b2613e7fe6d7dd61c713f
+Author: jacket <jacket.1995@qq.com>
+Date:   Mon Apr 16 16:23:17 2018 +0800
+
+    SocketClient and videocontrolthread add log4qt
+
+ ChildView/videocontrolthread.cpp | 4 +++-
+ ChildView/videocontrolthread.h   | 2 ++
+ Client/SocketClient.cpp          | 7 ++++++-
+ Client/SocketClient.h            | 3 ++-
+ 4 files changed, 13 insertions(+), 3 deletions(-)
+
+commit 2aa77d9840c6f956d1f2fb67f5b9272d91842739
+Author: jacket <jacket.1995@qq.com>
+Date:   Mon Apr 16 16:02:30 2018 +0800
+
+    add a tag if contain log4qt
+
+ log4qt/log4qt.pri | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 847ce0171f75b70ceb241b18159c1142d1f59a90
+Author: jacket <jacket.1995@qq.com>
+Date:   Mon Apr 16 15:59:39 2018 +0800
+
+    SocketServer add log4qt
+
+ Video/SocketServer.cpp | 22 ++++++++++++++++++----
+ Video/SocketServer.h   | 12 ++++++++++++
+ 2 files changed, 30 insertions(+), 4 deletions(-)
+
+commit 8b0bd0382a93f44b4ff37f655dbff000101d1798
+Author: jacket <jacket.1995@qq.com>
+Date:   Mon Apr 16 08:49:29 2018 +0800
+
+    change '=' to "+="
+
+ log4qt/log4qt.pri | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 693f20cee8f50206a468f499ae176a3ded32f0eb
+Author: jacket <jacket.1995@qq.com>
+Date:   Sun Apr 15 20:00:34 2018 +0800
+
+    集成新的Log4qt编译通过修改
+
+ log4qt/log4qt.pri     | 20 ++++++++++++++++++++
+ log4qt/log4qtshared.h |  2 +-
+ 2 files changed, 21 insertions(+), 1 deletion(-)
+
+commit f18cc8fa639b8e1b82ac91ab01f8ae5147d2ee75
+Author: jacket <jacket.1995@qq.com>
+Date:   Sun Apr 15 16:42:00 2018 +0800
+
+    用一个有人维护的log4qt替代，上一个自己就用出了bug，修复就找了好久，还是有人维护的好
+    
+    from github:https://github.com/MEONMedical/Log4Qt.git
+
+ log4qt/CMakeLists.txt                   |  239 ++++
+ log4qt/LICENSE-2.0.txt                  |  202 ----
+ log4qt/appender.cpp                     |   22 +
+ log4qt/appender.h                       |  177 ++-
+ log4qt/appenderskeleton.cpp             |  451 ++++---
+ log4qt/appenderskeleton.h               |  364 +++---
+ log4qt/asyncappender.cpp                |  112 ++
+ log4qt/asyncappender.h                  |   96 ++
+ log4qt/basicconfigurator.cpp            |  121 +-
+ log4qt/basicconfigurator.h              |   83 +-
+ log4qt/binaryfileappender.cpp           |  225 ++++
+ log4qt/binaryfileappender.h             |  143 +++
+ log4qt/binarylayout.cpp                 |   30 +
+ log4qt/binarylayout.h                   |   62 +
+ log4qt/binarylogger.cpp                 |   47 +
+ log4qt/binarylogger.h                   |   71 ++
+ log4qt/binaryloggingevent.cpp           |   68 ++
+ log4qt/binaryloggingevent.h             |   53 +
+ log4qt/binarylogstream.cpp              |   47 +
+ log4qt/binarylogstream.h                |   28 +
+ log4qt/binarytotextlayout.cpp           |   37 +
+ log4qt/binarytotextlayout.h             |   29 +
+ log4qt/binarywriterappender.cpp         |  155 +++
+ log4qt/binarywriterappender.h           |   54 +
+ log4qt/colorconsoleappender.cpp         |  280 +++++
+ log4qt/colorconsoleappender.h           |   90 ++
+ log4qt/consoleappender.cpp              |  275 ++---
+ log4qt/consoleappender.h                |  219 ++--
+ log4qt/dailyfileappender.cpp            |  111 ++
+ log4qt/dailyfileappender.h              |   72 ++
+ log4qt/dailyrollingfileappender.cpp     |  571 ++++-----
+ log4qt/dailyrollingfileappender.h       |  282 ++---
+ log4qt/databaseappender.cpp             |  169 +++
+ log4qt/databaseappender.h               |  130 ++
+ log4qt/databaselayout.cpp               |  186 +++
+ log4qt/databaselayout.h                 |  107 ++
+ log4qt/fileappender.cpp                 |  490 ++++----
+ log4qt/fileappender.h                   |  363 +++---
+ log4qt/helpers/appenderattachable.cpp   |   92 ++
+ log4qt/helpers/appenderattachable.h     |   98 ++
+ log4qt/helpers/binaryclasslogger.cpp    |   26 +
+ log4qt/helpers/binaryclasslogger.h      |   27 +
+ log4qt/helpers/classlogger.cpp          |   84 +-
+ log4qt/helpers/classlogger.h            |  117 +-
+ log4qt/helpers/configuratorhelper.cpp   |  175 ++-
+ log4qt/helpers/configuratorhelper.h     |  317 +++--
+ log4qt/helpers/datetime.cpp             |  337 +-----
+ log4qt/helpers/datetime.h               |  307 ++---
+ log4qt/helpers/dispatcher.cpp           |   56 +
+ log4qt/helpers/dispatcher.h             |   60 +
+ log4qt/helpers/factory.cpp              |  932 ++++++++------
+ log4qt/helpers/factory.h                |  866 +++++++------
+ log4qt/helpers/initialisationhelper.cpp |  245 ++--
+ log4qt/helpers/initialisationhelper.h   |  574 +++------
+ log4qt/helpers/logerror.cpp             |  577 ++++-----
+ log4qt/helpers/logerror.h               | 1016 ++++++++--------
+ log4qt/helpers/logobject.cpp            |   74 --
+ log4qt/helpers/logobject.h              |  217 ----
+ log4qt/helpers/logobjectptr.cpp         |   65 -
+ log4qt/helpers/logobjectptr.h           |  187 ---
+ log4qt/helpers/optionconverter.cpp      |  454 ++++---
+ log4qt/helpers/optionconverter.h        |  208 ++--
+ log4qt/helpers/patternformatter.cpp     | 1543 +++++++++++-------------
+ log4qt/helpers/patternformatter.h       |  268 ++---
+ log4qt/helpers/properties.cpp           |  598 +++++----
+ log4qt/helpers/properties.h             |  211 ++--
+ log4qt/hierarchy.cpp                    |  251 ++--
+ log4qt/hierarchy.h                      |  174 +--
+ log4qt/layout.cpp                       |   92 +-
+ log4qt/layout.h                         |  223 ++--
+ log4qt/level.cpp                        |  292 ++---
+ log4qt/level.h                          |  259 ++--
+ log4qt/log4qt.cpp                       |   58 -
+ log4qt/log4qt.h                         |  254 ++--
+ log4qt/log4qt.pri                       |  276 +++--
+ log4qt/log4qt.pro                       |   41 +
+ log4qt/log4qt.qbs                       |  204 ++++
+ log4qt/log4qtshared.h                   |   19 +
+ log4qt/log4qtsharedptr.h                |   40 +
+ log4qt/logger.cpp                       |  543 ++++-----
+ log4qt/logger.h                         | 2000 ++++++-------------------------
+ log4qt/loggerrepository.cpp             |   57 +-
+ log4qt/loggerrepository.h               |  127 +-
+ log4qt/loggingevent.cpp                 |  524 ++++----
+ log4qt/loggingevent.h                   |  385 +++---
+ log4qt/logmanager.cpp                   |  887 +++++++-------
+ log4qt/logmanager.h                     |  642 +++++-----
+ log4qt/logstream.cpp                    |   49 +
+ log4qt/logstream.h                      |   65 +
+ log4qt/mainthreadappender.cpp           |   82 ++
+ log4qt/mainthreadappender.h             |   87 ++
+ log4qt/mdc.cpp                          |  113 +-
+ log4qt/mdc.h                            |  141 +--
+ log4qt/ndc.cpp                          |  190 ++-
+ log4qt/ndc.h                            |  126 +-
+ log4qt/patternlayout.cpp                |  192 ++-
+ log4qt/patternlayout.h                  |  225 ++--
+ log4qt/propertyconfigurator.cpp         |  999 ++++++++-------
+ log4qt/propertyconfigurator.h           |  277 ++---
+ log4qt/qmllogger.cpp                    |  112 ++
+ log4qt/qmllogger.h                      |   91 ++
+ log4qt/rollingbinaryfileappender.cpp    |  247 ++++
+ log4qt/rollingbinaryfileappender.h      |   96 ++
+ log4qt/rollingfileappender.cpp          |  255 ++--
+ log4qt/rollingfileappender.h            |  237 ++--
+ log4qt/signalappender.cpp               |   45 +
+ log4qt/signalappender.h                 |   64 +
+ log4qt/simplelayout.cpp                 |   77 +-
+ log4qt/simplelayout.h                   |  118 +-
+ log4qt/simpletimelayout.cpp             |   47 +
+ log4qt/simpletimelayout.h               |   61 +
+ log4qt/spi/filter.cpp                   |   68 +-
+ log4qt/spi/filter.h                     |  145 +--
+ log4qt/systemlogappender.cpp            |  173 +++
+ log4qt/systemlogappender.h              |   75 ++
+ log4qt/telnetappender.cpp               |  213 ++++
+ log4qt/telnetappender.h                 |  188 +++
+ log4qt/ttcclayout.cpp                   |  256 ++--
+ log4qt/ttcclayout.h                     |  383 +++---
+ log4qt/varia/binaryeventfilter.cpp      |   30 +
+ log4qt/varia/binaryeventfilter.h        |   38 +
+ log4qt/varia/debugappender.cpp          |  138 +--
+ log4qt/varia/debugappender.h            |  163 +--
+ log4qt/varia/denyallfilter.cpp          |   66 +-
+ log4qt/varia/denyallfilter.h            |   97 +-
+ log4qt/varia/levelmatchfilter.cpp       |   99 +-
+ log4qt/varia/levelmatchfilter.h         |  169 +--
+ log4qt/varia/levelrangefilter.cpp       |   73 +-
+ log4qt/varia/levelrangefilter.h         |  207 ++--
+ log4qt/varia/listappender.cpp           |  187 +--
+ log4qt/varia/listappender.h             |  244 ++--
+ log4qt/varia/nullappender.cpp           |  100 +-
+ log4qt/varia/nullappender.h             |   69 +-
+ log4qt/varia/stringmatchfilter.cpp      |  102 +-
+ log4qt/varia/stringmatchfilter.h        |  164 +--
+ log4qt/wdcappender.cpp                  |   44 +
+ log4qt/wdcappender.h                    |   27 +
+ log4qt/writerappender.cpp               |  449 +++----
+ log4qt/writerappender.h                 |  296 ++---
+ log4qt/xmllayout.cpp                    |   61 +
+ log4qt/xmllayout.h                      |   25 +
+ 141 files changed, 15911 insertions(+), 15774 deletions(-)
+
+commit 39cb50d8e4defc82e0e0755f0e9be643b1fa8454
+Author: jacket <jacket.1995@qq.com>
+Date:   Sun Apr 15 10:23:16 2018 +0800
+
+    rm log 。h 。cpp
+
+ QTConfig.pro | 2 --
+ 1 file changed, 2 deletions(-)
+
+commit b491e11ff6f715ce6afaadce59799f6088c3e075
+Author: jacket <jacket.1995@qq.com>
+Date:   Sun Apr 15 10:22:48 2018 +0800
+
+    Log4Qt配置
+
+ main.cpp | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+
+commit 7a24a022a685b5136ae7b28beccc20148a9234af
+Author: jacket <jacket.1995@qq.com>
+Date:   Fri Apr 13 15:14:51 2018 +0800
+
+    串口界面选择协议内容时提供一定的提示
+
+ ChildView/serialview.cpp | 87 ++++++++++++++++++++++++++++++++++++++++++++++++
+ ChildView/serialview.h   |  3 ++
+ ChildView/ui_serial.h    |  7 ++++
+ 3 files changed, 97 insertions(+)
+
+commit 6aa00f1f690a318fb5305ef82f12164700f0c9c0
+Author: jacket <jacket.1995@qq.com>
+Date:   Fri Apr 13 09:30:05 2018 +0800
+
+    集成log4qt
+    
+    from https://github.com/devbean/log4qt
+    遵循 Apache-2.0开源协议
+
+ QTConfig.pro                            |    2 +
+ log4qt/LICENSE-2.0.txt                  |  202 ++++
+ log4qt/appender.h                       |  135 +++
+ log4qt/appenderskeleton.cpp             |  261 +++++
+ log4qt/appenderskeleton.h               |  225 +++++
+ log4qt/basicconfigurator.cpp            |  107 ++
+ log4qt/basicconfigurator.h              |   84 ++
+ log4qt/consoleappender.cpp              |  198 ++++
+ log4qt/consoleappender.h                |  160 +++
+ log4qt/dailyrollingfileappender.cpp     |  352 +++++++
+ log4qt/dailyrollingfileappender.h       |  196 ++++
+ log4qt/fileappender.cpp                 |  307 ++++++
+ log4qt/fileappender.h                   |  233 +++++
+ log4qt/helpers/classlogger.cpp          |  100 ++
+ log4qt/helpers/classlogger.h            |  115 +++
+ log4qt/helpers/configuratorhelper.cpp   |  136 +++
+ log4qt/helpers/configuratorhelper.h     |  210 ++++
+ log4qt/helpers/datetime.cpp             |  326 ++++++
+ log4qt/helpers/datetime.h               |  212 ++++
+ log4qt/helpers/factory.cpp              |  459 +++++++++
+ log4qt/helpers/factory.h                |  492 +++++++++
+ log4qt/helpers/initialisationhelper.cpp |  185 ++++
+ log4qt/helpers/initialisationhelper.h   |  435 ++++++++
+ log4qt/helpers/logerror.cpp             |  354 +++++++
+ log4qt/helpers/logerror.h               |  550 ++++++++++
+ log4qt/helpers/logobject.cpp            |   74 ++
+ log4qt/helpers/logobject.h              |  217 ++++
+ log4qt/helpers/logobjectptr.cpp         |   65 ++
+ log4qt/helpers/logobjectptr.h           |  187 ++++
+ log4qt/helpers/optionconverter.cpp      |  315 ++++++
+ log4qt/helpers/optionconverter.h        |  150 +++
+ log4qt/helpers/patternformatter.cpp     |  893 +++++++++++++++++
+ log4qt/helpers/patternformatter.h       |  195 ++++
+ log4qt/helpers/properties.cpp           |  364 +++++++
+ log4qt/helpers/properties.h             |  161 +++
+ log4qt/hierarchy.cpp                    |  212 ++++
+ log4qt/hierarchy.h                      |  141 +++
+ log4qt/layout.cpp                       |   91 ++
+ log4qt/layout.h                         |  156 +++
+ log4qt/level.cpp                        |  204 ++++
+ log4qt/level.h                          |  193 ++++
+ log4qt/log4qt.cpp                       |   58 ++
+ log4qt/log4qt.h                         |  614 ++++++++++++
+ log4qt/log4qt.pri                       |  111 +++
+ log4qt/logger.cpp                       |  349 +++++++
+ log4qt/logger.h                         | 1665 +++++++++++++++++++++++++++++++
+ log4qt/loggerrepository.cpp             |   75 ++
+ log4qt/loggerrepository.h               |  128 +++
+ log4qt/loggingevent.cpp                 |  272 +++++
+ log4qt/loggingevent.h                   |  221 ++++
+ log4qt/logmanager.cpp                   |  503 ++++++++++
+ log4qt/logmanager.h                     |  340 +++++++
+ log4qt/mdc.cpp                          |  116 +++
+ log4qt/mdc.h                            |  122 +++
+ log4qt/ndc.cpp                          |  154 +++
+ log4qt/ndc.h                            |  121 +++
+ log4qt/patternlayout.cpp                |  147 +++
+ log4qt/patternlayout.h                  |  159 +++
+ log4qt/propertyconfigurator.cpp         |  588 +++++++++++
+ log4qt/propertyconfigurator.h           |  194 ++++
+ log4qt/rollingfileappender.cpp          |  191 ++++
+ log4qt/rollingfileappender.h            |  164 +++
+ log4qt/simplelayout.cpp                 |   84 ++
+ log4qt/simplelayout.h                   |  102 ++
+ log4qt/spi/filter.cpp                   |   70 ++
+ log4qt/spi/filter.h                     |  124 +++
+ log4qt/ttcclayout.cpp                   |  182 ++++
+ log4qt/ttcclayout.h                     |  235 +++++
+ log4qt/varia/debugappender.cpp          |  127 +++
+ log4qt/varia/debugappender.h            |  133 +++
+ log4qt/varia/denyallfilter.cpp          |   77 ++
+ log4qt/varia/denyallfilter.h            |  105 ++
+ log4qt/varia/levelmatchfilter.cpp       |  100 ++
+ log4qt/varia/levelmatchfilter.h         |  137 +++
+ log4qt/varia/levelrangefilter.cpp       |  104 ++
+ log4qt/varia/levelrangefilter.h         |  153 +++
+ log4qt/varia/listappender.cpp           |  153 +++
+ log4qt/varia/listappender.h             |  174 ++++
+ log4qt/varia/nullappender.cpp           |  104 ++
+ log4qt/varia/nullappender.h             |  102 ++
+ log4qt/varia/stringmatchfilter.cpp      |  101 ++
+ log4qt/varia/stringmatchfilter.h        |  133 +++
+ log4qt/writerappender.cpp               |  288 ++++++
+ log4qt/writerappender.h                 |  200 ++++
+ 84 files changed, 18934 insertions(+)
+
+commit 354e47fec121743c6ca5c2c104af6c32c71dcc3c
+Author: jacket <jacket.1995@qq.com>
+Date:   Thu Apr 12 17:10:22 2018 +0800
+
+    Move to Windows
+
+ 64.ico                                                     | Bin
+ Action/action.cpp                                          |   0
+ Action/action.h                                            |   0
+ Action/globalaction.cpp                                    |   0
+ Action/globalaction.h                                      |   0
+ ChildView/EditGroup.cpp                                    |   0
+ ChildView/EditGroup.h                                      |   0
+ ChildView/cameraview.cpp                                   |   0
+ ChildView/cameraview.h                                     |   0
+ ChildView/clabel.cpp                                       |   0
+ ChildView/clabel.h                                         |   0
+ ChildView/common.h                                         |   0
+ ChildView/customframe.h                                    |   0
+ ChildView/customlineedit.cpp                               |   0
+ ChildView/customlineedit.h                                 |   0
+ ChildView/serialview.cpp                                   |   0
+ ChildView/serialview.h                                     |   0
+ ChildView/udpvideothread.h                                 |   0
+ ChildView/ui_camera.h                                      |   0
+ ChildView/ui_serial.h                                      |   0
+ ChildView/ui_window.h                                      |   0
+ ChildView/videocontrolthread.cpp                           |   0
+ ChildView/videocontrolthread.h                             |   0
+ ChildView/videoform.cpp                                    |   0
+ ChildView/videoform.h                                      |   0
+ ChildView/videothread.cpp                                  |   0
+ ChildView/videothread.h                                    |   0
+ ChildView/windowview.cpp                                   |   0
+ ChildView/windowview.h                                     |   0
+ Client/Generate.cpp                                        |   0
+ Client/Generate.h                                          |   0
+ Client/JsonScanner.cpp                                     |   1 +
+ Client/JsonScanner.h                                       |   0
+ Client/Scanner.cpp                                         |   0
+ Client/Scanner.h                                           |   0
+ Client/SocketClient.cpp                                    |   0
+ Client/SocketClient.h                                      |   0
+ Client/UDPSocket.cpp                                       |   0
+ Client/UDPSocket.h                                         |   0
+ Client/clientfactory.cpp                                   |   0
+ Client/clientfactory.h                                     |   0
+ CustomTabWidget/CustomTabWidget.cpp                        |   0
+ CustomTabWidget/CustomTabWidget.h                          |   0
+ CustomTabWidget/custlabel.cpp                              |   0
+ CustomTabWidget/custlabel.h                                |   0
+ CustomTabWidget/tabcomb.cpp                                |   0
+ CustomTabWidget/tabcomb.cpp.Ql3922                         |   0
+ CustomTabWidget/tabcomb.h                                  |   0
+ Dialog/appthread.cpp                                       |   0
+ Dialog/appthread.h                                         |   0
+ Dialog/modeldialog.cpp                                     |   0
+ Dialog/modeldialog.h                                       |   0
+ Dialog/ui_modeldialog.h                                    |   0
+ Helper/messagehelper.cpp                                   |   0
+ Helper/messagehelper.h                                     |   0
+ ImageSelectedView/RectUtils.h                              |   0
+ ImageSelectedView/imagebufftrans.h                         |   0
+ ImageSelectedView/imageform.cpp                            |   0
+ ImageSelectedView/imageform.h                              |   0
+ ImageSelectedView/imagelabel.cpp                           |   0
+ ImageSelectedView/imagelabel.h                             |   0
+ ImageSelectedView/ui_image.h                               |   0
+ LeftWidget/leftwidget.cpp                                  |   0
+ LeftWidget/leftwidget.h                                    |   0
+ LeftWidget/ui_left.h                                       |   0
+ Login/logindialog.cpp                                      |   0
+ Login/logindialog.h                                        |   0
+ Login/ui_logindialog.h                                     |   0
+ QTConfig.pro                                               |   0
+ QtWaitingSpinner/LICENSE                                   |   0
+ QtWaitingSpinner/waitingspinnerwidget.cpp                  |   0
+ QtWaitingSpinner/waitingspinnerwidget.h                    |   0
+ SerialDialog/recvpaser.cpp                                 |   0
+ SerialDialog/recvpaser.h                                   |   0
+ SerialDialog/serialdialog.cpp                              |   0
+ SerialDialog/serialdialog.h                                |   0
+ SerialDialog/serialdialog.ui                               |   0
+ TabWidget/customtabstyle.h                                 |   0
+ TabWidget/htabwidget.cpp                                   |   0
+ TabWidget/htabwidget.h                                     |   0
+ TabWidget/idtable.cpp                                      |   0
+ TitleBar/titlebar.cpp                                      |   0
+ TitleBar/titlebar.h                                        |   0
+ Video/SocketServer.cpp                                     |   0
+ Video/SocketServer.h                                       |   0
+ Video/buffertransfer.cpp                                   |   0
+ Video/buffertransfer.h                                     |   0
+ Video/framepackage.h                                       |   0
+ Video/imageutils.cpp                                       |   0
+ Video/imageutils.h                                         |   0
+ Video/videobuffer.cpp                                      |   0
+ Video/videobuffer.h                                        |   0
+ Video/videodescriptorthread.cpp                            |   0
+ Video/videodescriptorthread.h                              |   0
+ Video/videonode.cpp                                        |   0
+ Video/videonode.h                                          |   0
+ Video/videorecipient.cpp                                   |   0
+ Video/videorecipient.h                                     |   0
+ Video/videoserver.cpp                                      |   0
+ Video/videoserver.h                                        |   0
+ app.cpp                                                    |   0
+ app.h                                                      |   0
+ childview.h                                                |   0
+ global.qss                                                 |   0
+ globalcommon.h                                             |   0
+ idtable.h                                                  |   0
+ imageselectedview.h                                        |   0
+ jsoncpp/json/autolink.h                                    |   0
+ jsoncpp/json/config.h                                      |   0
+ jsoncpp/json/features.h                                    |   0
+ jsoncpp/json/forwards.h                                    |   0
+ jsoncpp/json/json.h                                        |   0
+ jsoncpp/json/reader.h                                      |   0
+ jsoncpp/json/value.h                                       |   0
+ jsoncpp/json/writer.h                                      |   0
+ jsoncpp/json_batchallocator.h                              |   0
+ jsoncpp/json_internalarray.inl                             |   0
+ jsoncpp/json_internalmap.inl                               |   0
+ jsoncpp/json_reader.cpp                                    |   0
+ jsoncpp/json_value.cpp                                     |   0
+ jsoncpp/json_valueiterator.inl                             |   0
+ jsoncpp/json_writer.cpp                                    |   0
+ main.cpp                                                   |   0
+ mainwindow.cpp                                             |   0
+ mainwindow.h                                               |   0
+ mainwindow.ui                                              |   0
+ res/back_tabbar.png                                        | Bin
+ res/btn_close_hover.png                                    | Bin
+ res/btn_close_origin.png                                   | Bin
+ res/btn_max_hover.png                                      | Bin
+ res/btn_max_origin.png                                     | Bin
+ res/btn_min_hover.png                                      | Bin
+ res/btn_min_origin.png                                     | Bin
+ res/btn_pause.png                                          | Bin
+ res/btn_right_hover.png                                    | Bin
+ res/btn_right_org.png                                      | Bin
+ res/btn_right_unable.png                                   | Bin
+ res/btn_setting_hover.png                                  | Bin
+ res/btn_setting_origin.png                                 | Bin
+ res/btn_start.png                                          | Bin
+ res/btn_timeout.png                                        | Bin
+ res/inputbtn_normal.png                                    | Bin
+ res/main_border.png                                        | Bin
+ res/main_border_3bian.png                                  | Bin
+ res/main_title.png                                         | Bin
+ res/tab_org.png                                            | Bin
+ res/tab_selected.png                                       | Bin
+ res/tab_selected_arrow.png                                 | Bin
+ "res/\345\217\202\350\200\203\345\233\276.jpg"             | Bin
+ "res/\345\217\263\350\276\271\345\272\225\350\211\262.png" | Bin
+ "res/\345\241\253\346\241\206.png"                         | Bin
+ "res/\345\272\225\350\211\262.png"                         | Bin
+ rightview.h                                                |   0
+ src.qrc                                                    |   0
+ tabwidget.h                                                |   0
+ testutils.h                                                |   0
+ ui_main.h                                                  |   0
+ ui_serialdialog.h                                          |   0
+ 158 files changed, 1 insertion(+)
+
+commit 01646a089f600f44e7ce8694dd974c6ed53e9332
+Author: jacket <jacket.1995@qq.com>
+Date:   Mon Apr 9 15:12:49 2018 +0800
+
+    修复Bug
+
+ ChildView/serialview.cpp |  30 +++--
+ ChildView/serialview.h   |   1 +
+ QTConfig.pro             | 332 ++++++++++++++++++++++++-----------------------
+ jsoncpp/json_value.cpp   |   2 +
+ 4 files changed, 192 insertions(+), 173 deletions(-)
+
+commit 8b402e28fcf5cee879e650ba0142673c54add484
+Author: jacket <jacket.1995@qq.com>
+Date:   Mon Apr 9 11:38:27 2018 +0800
+
+    提供配置串口内容的方法
+
+ Action/action.cpp        |  18 ++++++
+ Action/action.h          |   4 ++
+ ChildView/serialview.cpp | 142 ++++++++++++++++++++++++++++++++++++++++++-----
+ ChildView/serialview.h   |   7 +++
+ ChildView/ui_serial.h    |   4 +-
+ TabWidget/idtable.cpp    |  77 +++++++++++++------------
+ idtable.h                |  11 +++-
+ 7 files changed, 212 insertions(+), 51 deletions(-)
+
+commit 8daee5ca25c6fbc44f561191f9db603b6a27782c
+Author: jacket <jacket.1995@qq.com>
+Date:   Sun Apr 8 14:31:48 2018 +0800
+
+    界面添加功能
+
+ ChildView/serialview.cpp | 53 +++++++++++++++++++++++++++++++++++++++++++++---
+ ChildView/serialview.h   |  4 ++++
+ ChildView/ui_serial.h    | 53 ++++++++++++++++++++++++++++++++++++++++++++++--
+ idtable.h                |  1 +
+ 4 files changed, 106 insertions(+), 5 deletions(-)
+
+commit ec85e3c1168c4d9f8b9e58ed15b77cdbce6a043e
+Author: jacket <jacket.1995@qq.com>
+Date:   Sat Apr 7 10:58:09 2018 +0800
+
+    修改界面布局
+
+ ChildView/serialview.cpp |  6 ++++--
+ ChildView/ui_serial.h    | 25 +++++++++++++++----------
+ 2 files changed, 19 insertions(+), 12 deletions(-)
+
+commit 3dde4e9e3751debdc439d538a83b29e5ecf29544
+Author: jacket <jacket.1995@qq.com>
+Date:   Wed Apr 4 16:26:32 2018 +0800
+
+    Move to Linux
+
+ 64.ico                                             | Bin
+ Action/action.cpp                                  |   0
+ Action/action.h                                    |   0
+ Action/globalaction.cpp                            |   0
+ Action/globalaction.h                              |   0
+ ChildView/EditGroup.cpp                            |   0
+ ChildView/EditGroup.h                              |   0
+ ChildView/cameraview.cpp                           |   0
+ ChildView/cameraview.h                             |   0
+ ChildView/clabel.cpp                               |   0
+ ChildView/clabel.h                                 |   0
+ ChildView/common.h                                 |   0
+ ChildView/customframe.h                            |   0
+ ChildView/customlineedit.cpp                       |   0
+ ChildView/customlineedit.h                         |   0
+ ChildView/picturedialog.cpp                        | 192 ++++----
+ ChildView/picturedialog.h                          | 114 ++---
+ ChildView/serialview.cpp                           |   0
+ ChildView/serialview.h                             |   0
+ ChildView/udpvideothread.h                         |   0
+ ChildView/ui_camera.h                              |   0
+ ChildView/ui_serial.h                              |   0
+ ChildView/ui_window.h                              |   0
+ ChildView/videocontrolthread.cpp                   |   0
+ ChildView/videocontrolthread.h                     |   0
+ ChildView/videoform.cpp                            |   0
+ ChildView/videoform.h                              |   0
+ ChildView/videothread.cpp                          |   0
+ ChildView/videothread.h                            |   0
+ ChildView/windowview.cpp                           |   0
+ ChildView/windowview.h                             |   0
+ Client/Generate.cpp                                |   0
+ Client/Generate.h                                  |   0
+ Client/JsonScanner.cpp                             |   0
+ Client/JsonScanner.h                               |   0
+ Client/Scanner.cpp                                 |   0
+ Client/Scanner.h                                   |   0
+ Client/SocketClient.cpp                            |   0
+ Client/SocketClient.h                              |   0
+ Client/UDPSocket.cpp                               |   0
+ Client/UDPSocket.h                                 |   0
+ Client/clientfactory.cpp                           |   0
+ Client/clientfactory.h                             |   0
+ CustomTabWidget/CustomTabWidget.cpp                |   0
+ CustomTabWidget/CustomTabWidget.h                  |   0
+ CustomTabWidget/custlabel.cpp                      |   0
+ CustomTabWidget/custlabel.h                        |   0
+ CustomTabWidget/tabcomb.cpp                        |   0
+ CustomTabWidget/tabcomb.cpp.Ql3922                 |   0
+ CustomTabWidget/tabcomb.h                          |   0
+ Dialog/appthread.cpp                               |   0
+ Dialog/appthread.h                                 |   0
+ Dialog/modeldialog.cpp                             |   0
+ Dialog/modeldialog.h                               |   0
+ Dialog/ui_modeldialog.h                            |   0
+ Helper/messagehelper.cpp                           |   0
+ Helper/messagehelper.h                             |   0
+ ImageSelectedView/RectUtils.h                      |   0
+ ImageSelectedView/imagebufftrans.h                 |   0
+ ImageSelectedView/imageform.cpp                    |   0
+ ImageSelectedView/imageform.h                      |   0
+ ImageSelectedView/imagelabel.cpp                   |   0
+ ImageSelectedView/imagelabel.h                     |   0
+ ImageSelectedView/ui_image.h                       |   0
+ LeftWidget/leftwidget.cpp                          |   0
+ LeftWidget/leftwidget.h                            |   0
+ LeftWidget/ui_left.h                               |   0
+ Login/logindialog.cpp                              |   0
+ Login/logindialog.h                                |   0
+ Login/ui_logindialog.h                             |   0
+ QTConfig.pro                                       |   0
+ QtWaitingSpinner/LICENSE                           |   0
+ QtWaitingSpinner/waitingspinnerwidget.cpp          |   0
+ QtWaitingSpinner/waitingspinnerwidget.h            |   0
+ SerialDialog/recvpaser.cpp                         |   0
+ SerialDialog/recvpaser.h                           |   0
+ SerialDialog/serialdialog.cpp                      |   0
+ SerialDialog/serialdialog.h                        |   0
+ SerialDialog/serialdialog.ui                       |   0
+ TabWidget/customtabstyle.h                         |   0
+ TabWidget/htabwidget.cpp                           |   0
+ TabWidget/htabwidget.h                             |   0
+ TabWidget/idtable.cpp                              |   0
+ TitleBar/titlebar.cpp                              |   0
+ TitleBar/titlebar.h                                |   0
+ Video/SocketServer.cpp                             |   0
+ Video/SocketServer.h                               |   0
+ Video/buffertransfer.cpp                           |   0
+ Video/buffertransfer.h                             |   0
+ Video/framepackage.h                               |   0
+ Video/imageutils.cpp                               |   0
+ Video/imageutils.h                                 |   0
+ Video/videobuffer.cpp                              |   0
+ Video/videobuffer.h                                |   0
+ Video/videodescriptorthread.cpp                    |   0
+ Video/videodescriptorthread.h                      |   0
+ Video/videonode.cpp                                |   0
+ Video/videonode.h                                  |   0
+ Video/videorecipient.cpp                           |   0
+ Video/videorecipient.h                             |   0
+ Video/videoserver.cpp                              |   0
+ Video/videoserver.h                                |   0
+ app.cpp                                            |   0
+ app.h                                              |   0
+ childview.h                                        |   0
+ global.qss                                         |   0
+ globalcommon.h                                     |   0
+ idtable.h                                          |   0
+ imageselectedview.h                                |   0
+ jsoncpp/json/autolink.h                            |   0
+ jsoncpp/json/config.h                              |   0
+ jsoncpp/json/features.h                            |   0
+ jsoncpp/json/forwards.h                            |   0
+ jsoncpp/json/json.h                                |   0
+ jsoncpp/json/reader.h                              |   0
+ jsoncpp/json/value.h                               |   0
+ jsoncpp/json/writer.h                              |   0
+ jsoncpp/json_batchallocator.h                      |   0
+ jsoncpp/json_internalarray.inl                     |   0
+ jsoncpp/json_internalmap.inl                       |   0
+ jsoncpp/json_reader.cpp                            |   0
+ jsoncpp/json_value.cpp                             |   0
+ jsoncpp/json_valueiterator.inl                     |   0
+ jsoncpp/json_writer.cpp                            |   0
+ main.cpp                                           |   0
+ mainwindow.cpp                                     |   0
+ mainwindow.h                                       |   0
+ mainwindow.ui                                      |   0
+ res/back_tabbar.png                                | Bin
+ res/btn_close_hover.png                            | Bin
+ res/btn_close_origin.png                           | Bin
+ res/btn_max_hover.png                              | Bin
+ res/btn_max_origin.png                             | Bin
+ res/btn_min_hover.png                              | Bin
+ res/btn_min_origin.png                             | Bin
+ res/btn_pause.png                                  | Bin
+ res/btn_right_hover.png                            | Bin
+ res/btn_right_org.png                              | Bin
+ res/btn_right_unable.png                           | Bin
+ res/btn_setting_hover.png                          | Bin
+ res/btn_setting_origin.png                         | Bin
+ res/btn_start.png                                  | Bin
+ res/btn_timeout.png                                | Bin
+ res/inputbtn_normal.png                            | Bin
+ res/main_border.png                                | Bin
+ res/main_border_3bian.png                          | Bin
+ res/main_title.png                                 | Bin
+ res/tab_org.png                                    | Bin
+ res/tab_selected.png                               | Bin
+ res/tab_selected_arrow.png                         | Bin
+ "res/\345\217\202\350\200\203\345\233\276.jpg"     | Bin
+ ...17\263\350\276\271\345\272\225\350\211\262.png" | Bin
+ "res/\345\241\253\346\241\206.png"                 | Bin
+ "res/\345\272\225\350\211\262.png"                 | Bin
+ rightview.h                                        |   0
+ src.qrc                                            |   0
+ tabwidget.h                                        |   0
+ testutils.h                                        |   0
+ ui_main.h                                          |   0
+ ui_serialdialog.h                                  | 484 ++++++++++-----------
+ 160 files changed, 395 insertions(+), 395 deletions(-)
+
+commit 62b8f5679b9bc8ae1fa5bf55f6564f98c0788c19
+Author: jacket <jacket.1995@qq.com>
+Date:   Fri Mar 9 12:19:58 2018 +0800
+
+    将保存图片改为显示大图的功能
+
+ ChildView/cameraview.cpp    | 74 +++++++++++++++++++++-------------
+ ChildView/cameraview.h      |  9 +++++
+ ChildView/picturedialog.cpp | 96 +++++++++++++++++++++++++++++++++++++++++++++
+ ChildView/picturedialog.h   | 57 +++++++++++++++++++++++++++
+ ChildView/ui_camera.h       |  2 +-
+ QTConfig.pro                |  6 ++-
+ 6 files changed, 214 insertions(+), 30 deletions(-)
+
+commit 3b9ce7e58cf436539b4caa366f61ab7efa8184ff
+Author: jacket <jacket.1995@qq.com>
+Date:   Mon Jan 29 23:34:31 2018 +0800
+
+    copy到Windows下的提交
+
+ 64.ico                                             | Bin
+ Action/action.cpp                                  |   0
+ Action/action.h                                    |   0
+ Action/globalaction.cpp                            |   0
+ Action/globalaction.h                              |   0
+ ChildView/EditGroup.cpp                            |   0
+ ChildView/EditGroup.h                              |   0
+ ChildView/cameraview.cpp                           |   0
+ ChildView/cameraview.h                             |   0
+ ChildView/clabel.cpp                               |   0
+ ChildView/clabel.h                                 |   0
+ ChildView/common.h                                 |   0
+ ChildView/customframe.h                            |   0
+ ChildView/customlineedit.cpp                       |   0
+ ChildView/customlineedit.h                         |   0
+ ChildView/serialview.cpp                           |   0
+ ChildView/serialview.h                             |   0
+ ChildView/udpvideothread.h                         |   0
+ ChildView/ui_camera.h                              |   0
+ ChildView/ui_serial.h                              |   0
+ ChildView/ui_window.h                              |   0
+ ChildView/videocontrolthread.cpp                   |   0
+ ChildView/videocontrolthread.h                     |   0
+ ChildView/videoform.cpp                            |   0
+ ChildView/videoform.h                              |   0
+ ChildView/videothread.cpp                          |   0
+ ChildView/videothread.h                            |   0
+ ChildView/windowview.cpp                           |   0
+ ChildView/windowview.h                             |   0
+ Client/Generate.cpp                                |   0
+ Client/Generate.h                                  |   0
+ Client/JsonScanner.cpp                             |   0
+ Client/JsonScanner.h                               |   0
+ Client/Scanner.cpp                                 |   0
+ Client/Scanner.h                                   |   0
+ Client/SocketClient.cpp                            |   0
+ Client/SocketClient.h                              |   0
+ Client/UDPSocket.cpp                               |   0
+ Client/UDPSocket.h                                 |   0
+ Client/clientfactory.cpp                           |   0
+ Client/clientfactory.h                             |   0
+ CustomTabWidget/CustomTabWidget.cpp                |   0
+ CustomTabWidget/CustomTabWidget.h                  |   0
+ CustomTabWidget/custlabel.cpp                      |   0
+ CustomTabWidget/custlabel.h                        |   0
+ CustomTabWidget/tabcomb.cpp                        |   0
+ CustomTabWidget/tabcomb.cpp.Ql3922                 |   0
+ CustomTabWidget/tabcomb.h                          |   0
+ Dialog/appthread.cpp                               |   0
+ Dialog/appthread.h                                 |   0
+ Dialog/modeldialog.cpp                             |   0
+ Dialog/modeldialog.h                               |   0
+ Dialog/ui_modeldialog.h                            |   0
+ Helper/messagehelper.cpp                           |   0
+ Helper/messagehelper.h                             |   0
+ ImageSelectedView/RectUtils.h                      |   0
+ ImageSelectedView/imagebufftrans.h                 |   0
+ ImageSelectedView/imageform.cpp                    |   0
+ ImageSelectedView/imageform.h                      |   0
+ ImageSelectedView/imagelabel.cpp                   |   0
+ ImageSelectedView/imagelabel.h                     |   0
+ ImageSelectedView/ui_image.h                       |   0
+ LeftWidget/leftwidget.cpp                          |   0
+ LeftWidget/leftwidget.h                            |   0
+ LeftWidget/ui_left.h                               |   0
+ Login/logindialog.cpp                              |   0
+ Login/logindialog.h                                |   0
+ Login/ui_logindialog.h                             |   0
+ QTConfig.pro                                       |   0
+ QtWaitingSpinner/LICENSE                           |   0
+ QtWaitingSpinner/waitingspinnerwidget.cpp          |   0
+ QtWaitingSpinner/waitingspinnerwidget.h            |   0
+ SerialDialog/recvpaser.cpp                         |   0
+ SerialDialog/recvpaser.h                           |   0
+ SerialDialog/serialdialog.cpp                      |   0
+ SerialDialog/serialdialog.h                        |   0
+ SerialDialog/serialdialog.ui                       |   0
+ TabWidget/customtabstyle.h                         |   0
+ TabWidget/htabwidget.cpp                           |   0
+ TabWidget/htabwidget.h                             |   0
+ TabWidget/idtable.cpp                              |   0
+ TitleBar/titlebar.cpp                              |   0
+ TitleBar/titlebar.h                                |   0
+ Video/SocketServer.cpp                             |   0
+ Video/SocketServer.h                               |   0
+ Video/buffertransfer.cpp                           |   0
+ Video/buffertransfer.h                             |   0
+ Video/framepackage.h                               |   0
+ Video/imageutils.cpp                               |   0
+ Video/imageutils.h                                 |   0
+ Video/videobuffer.cpp                              |   0
+ Video/videobuffer.h                                |   0
+ Video/videodescriptorthread.cpp                    |   0
+ Video/videodescriptorthread.h                      |   0
+ Video/videonode.cpp                                |   0
+ Video/videonode.h                                  |   0
+ Video/videorecipient.cpp                           |   0
+ Video/videorecipient.h                             |   0
+ Video/videoserver.cpp                              |   0
+ Video/videoserver.h                                |   0
+ app.cpp                                            |   0
+ app.h                                              |   0
+ childview.h                                        |   0
+ global.qss                                         |   0
+ globalcommon.h                                     |   0
+ idtable.h                                          |   0
+ imageselectedview.h                                |   0
+ jsoncpp/json/autolink.h                            |   0
+ jsoncpp/json/config.h                              |   0
+ jsoncpp/json/features.h                            |   0
+ jsoncpp/json/forwards.h                            |   0
+ jsoncpp/json/json.h                                |   0
+ jsoncpp/json/reader.h                              |   0
+ jsoncpp/json/value.h                               |   0
+ jsoncpp/json/writer.h                              |   0
+ jsoncpp/json_batchallocator.h                      |   0
+ jsoncpp/json_internalarray.inl                     |   0
+ jsoncpp/json_internalmap.inl                       |   0
+ jsoncpp/json_reader.cpp                            |   0
+ jsoncpp/json_value.cpp                             |   0
+ jsoncpp/json_valueiterator.inl                     |   0
+ jsoncpp/json_writer.cpp                            |   0
+ main.cpp                                           |   0
+ mainwindow.cpp                                     |   0
+ mainwindow.h                                       |   0
+ mainwindow.ui                                      |   0
+ res/back_tabbar.png                                | Bin
+ res/btn_close_hover.png                            | Bin
+ res/btn_close_origin.png                           | Bin
+ res/btn_max_hover.png                              | Bin
+ res/btn_max_origin.png                             | Bin
+ res/btn_min_hover.png                              | Bin
+ res/btn_min_origin.png                             | Bin
+ res/btn_pause.png                                  | Bin
+ res/btn_right_hover.png                            | Bin
+ res/btn_right_org.png                              | Bin
+ res/btn_right_unable.png                           | Bin
+ res/btn_setting_hover.png                          | Bin
+ res/btn_setting_origin.png                         | Bin
+ res/btn_start.png                                  | Bin
+ res/btn_timeout.png                                | Bin
+ res/inputbtn_normal.png                            | Bin
+ res/main_border.png                                | Bin
+ res/main_border_3bian.png                          | Bin
+ res/main_title.png                                 | Bin
+ res/tab_org.png                                    | Bin
+ res/tab_selected.png                               | Bin
+ res/tab_selected_arrow.png                         | Bin
+ "res/\345\217\202\350\200\203\345\233\276.jpg"     | Bin
+ ...17\263\350\276\271\345\272\225\350\211\262.png" | Bin
+ "res/\345\241\253\346\241\206.png"                 | Bin
+ "res/\345\272\225\350\211\262.png"                 | Bin
+ rightview.h                                        |   0
+ src.qrc                                            |   0
+ tabwidget.h                                        |   0
+ testutils.h                                        |   0
+ ui_main.h                                          |   0
+ ui_serialdialog.h                                  | 242 +++++++++++++++++++++
+ 158 files changed, 242 insertions(+)
+
+commit f2e6d328c72931bfb91d28de74fd2eb44984c324
+Author: jacket <jacket.1995@qq.com>
+Date:   Tue Jan 23 08:50:36 2018 +0800
+
+    1.修复QObject在其他线程被删除的问题。
+    
+    虽然不知道为什么，但是不采用自己的方式解压jpg格式就没问题
+
+ Video/imageutils.cpp | 26 +++++++++++++-------------
+ 1 file changed, 13 insertions(+), 13 deletions(-)
+
+commit d07668af078f603b76e62054b4fb906549c6459d
+Author: jacket <jacket.1995@qq.com>
+Date:   Fri Jan 19 10:06:51 2018 +0800
+
+    version3.0
+    
+    1.添加了大量功能
+    2.将版本升到3.0
+
+ 64.ico                                             | Bin
+ Action/action.cpp                                  |   0
+ Action/action.h                                    |   0
+ Action/globalaction.cpp                            |   0
+ Action/globalaction.h                              |   0
+ ChildView/EditGroup.cpp                            |   0
+ ChildView/EditGroup.h                              |   0
+ ChildView/VideoForm.h.Co5644                       | 107 -------
+ ChildView/VideoForm.h~                             | 106 -------
+ ChildView/cameraview.cpp                           |   0
+ ChildView/cameraview.h                             |   0
+ ChildView/clabel.cpp                               |   0
+ ChildView/clabel.h                                 |   0
+ ChildView/common.h                                 |   0
+ ChildView/customframe.h                            |   0
+ ChildView/customlineedit.cpp                       |   0
+ ChildView/customlineedit.h                         |   0
+ ChildView/serialview.cpp                           |   0
+ ChildView/serialview.h                             |   0
+ ChildView/udpvideothread.h                         |   0
+ ChildView/ui_camera.h                              |   0
+ ChildView/ui_serial.h                              |   0
+ ChildView/ui_window.h                              |   0
+ ChildView/videocontrolthread.cpp                   |   0
+ ChildView/videocontrolthread.h                     |   0
+ ChildView/videoform.cpp                            |   0
+ ChildView/videoform.h                              |   0
+ ChildView/videothread.cpp                          |   0
+ ChildView/videothread.h                            |   0
+ ChildView/windowview.cpp                           |   0
+ ChildView/windowview.h                             |   0
+ Client/Generate.cpp                                |   0
+ Client/Generate.h                                  |   0
+ Client/JsonScanner.cpp                             |   0
+ Client/JsonScanner.h                               |   0
+ Client/Scanner.cpp                                 |   0
+ Client/Scanner.h                                   |   0
+ Client/SocketClient.cpp                            |   0
+ Client/SocketClient.h                              |   0
+ Client/UDPSocket.cpp                               |   0
+ Client/UDPSocket.h                                 |   0
+ Client/clientfactory.cpp                           |   0
+ Client/clientfactory.h                             |   0
+ CustomTabWidget/CustomTabWidget.cpp                |   0
+ CustomTabWidget/CustomTabWidget.h                  |   0
+ CustomTabWidget/custlabel.cpp                      |   0
+ CustomTabWidget/custlabel.h                        |   0
+ CustomTabWidget/tabcomb.cpp                        |   0
+ CustomTabWidget/tabcomb.cpp.Ql3922                 |   0
+ CustomTabWidget/tabcomb.h                          |   0
+ Dialog/appthread.cpp                               |   0
+ Dialog/appthread.h                                 |   0
+ Dialog/modeldialog.cpp                             |   0
+ Dialog/modeldialog.h                               |   0
+ Dialog/ui_modeldialog.h                            |   0
+ Helper/messagehelper.cpp                           |   0
+ Helper/messagehelper.h                             |   0
+ ImageSelectedView/RectUtils.h                      |   0
+ ImageSelectedView/imagebufftrans.h                 |   0
+ ImageSelectedView/imageform.cpp                    |   0
+ ImageSelectedView/imageform.h                      |   0
+ ImageSelectedView/imagelabel.cpp                   |   0
+ ImageSelectedView/imagelabel.h                     |   0
+ ImageSelectedView/ui_image.h                       |   0
+ LeftWidget/leftwidget.cpp                          |   0
+ LeftWidget/leftwidget.h                            |   0
+ LeftWidget/ui_left.h                               |   0
+ Login/logindialog.cpp                              |   0
+ Login/logindialog.h                                |   0
+ Login/ui_logindialog.h                             |   0
+ QTConfig.pro                                       | 326 ++++++++++----------
+ QTConfig.pro.user                                  | 318 -------------------
+ QTConfig.pro.user.552e84c                          | 318 -------------------
+ QTConfig.pro.user.e3f88c8                          | 336 ---------------------
+ QtWaitingSpinner/LICENSE                           |   0
+ QtWaitingSpinner/waitingspinnerwidget.cpp          |   0
+ QtWaitingSpinner/waitingspinnerwidget.h            |   0
+ SerialDialog/recvpaser.cpp                         |  12 +-
+ SerialDialog/recvpaser.h                           |  22 +-
+ SerialDialog/serialdialog.cpp                      |   0
+ SerialDialog/serialdialog.h                        |   0
+ SerialDialog/serialdialog.ui                       |   0
+ TabWidget/customtabstyle.h                         |   0
+ TabWidget/htabwidget.cpp                           |   0
+ TabWidget/htabwidget.h                             |   0
+ TabWidget/idtable.cpp                              |   0
+ TitleBar/titlebar.cpp                              |   0
+ TitleBar/titlebar.h                                |   0
+ Video/SocketServer.cpp                             |   0
+ Video/SocketServer.h                               |   0
+ Video/buffertransfer.cpp                           |   0
+ Video/buffertransfer.h                             |   0
+ Video/framepackage.h                               |   0
+ Video/imageutils.cpp                               |   0
+ Video/imageutils.h                                 |   0
+ Video/videobuffer.cpp                              |   0
+ Video/videobuffer.h                                |   0
+ Video/videodescriptorthread.cpp                    |   0
+ Video/videodescriptorthread.h                      |   0
+ Video/videonode.cpp                                |   0
+ Video/videonode.h                                  |   0
+ Video/videorecipient.cpp                           |   0
+ Video/videorecipient.h                             |   0
+ Video/videoserver.cpp                              |   0
+ Video/videoserver.h                                |   0
+ app.cpp                                            |   0
+ app.h                                              |   0
+ childview.h                                        |   0
+ global.qss                                         |   0
+ globalcommon.h                                     |   0
+ idtable.h                                          |   0
+ imageselectedview.h                                |   0
+ jsoncpp/json/autolink.h                            |   0
+ jsoncpp/json/config.h                              |   0
+ jsoncpp/json/features.h                            |   0
+ jsoncpp/json/forwards.h                            |   0
+ jsoncpp/json/json.h                                |   0
+ jsoncpp/json/reader.h                              |   0
+ jsoncpp/json/value.h                               |   0
+ jsoncpp/json/writer.h                              |   0
+ jsoncpp/json_batchallocator.h                      |   0
+ jsoncpp/json_internalarray.inl                     |   0
+ jsoncpp/json_internalmap.inl                       |   0
+ jsoncpp/json_reader.cpp                            |   0
+ jsoncpp/json_value.cpp                             |   0
+ jsoncpp/json_valueiterator.inl                     |   0
+ jsoncpp/json_writer.cpp                            |   0
+ main.cpp                                           |   0
+ mainwindow.cpp                                     |   0
+ mainwindow.h                                       |   0
+ mainwindow.ui                                      |   0
+ res/back_tabbar.png                                | Bin
+ res/btn_close_hover.png                            | Bin
+ res/btn_close_origin.png                           | Bin
+ res/btn_max_hover.png                              | Bin
+ res/btn_max_origin.png                             | Bin
+ res/btn_min_hover.png                              | Bin
+ res/btn_min_origin.png                             | Bin
+ res/btn_pause.png                                  | Bin
+ res/btn_right_hover.png                            | Bin
+ res/btn_right_org.png                              | Bin
+ res/btn_right_unable.png                           | Bin
+ res/btn_setting_hover.png                          | Bin
+ res/btn_setting_origin.png                         | Bin
+ res/btn_start.png                                  | Bin
+ res/btn_timeout.png                                | Bin
+ res/inputbtn_normal.png                            | Bin
+ res/main_border.png                                | Bin
+ res/main_border_3bian.png                          | Bin
+ res/main_title.png                                 | Bin
+ res/tab_org.png                                    | Bin
+ res/tab_selected.png                               | Bin
+ res/tab_selected_arrow.png                         | Bin
+ "res/\345\217\202\350\200\203\345\233\276.jpg"     | Bin
+ ...17\263\350\276\271\345\272\225\350\211\262.png" | Bin
+ "res/\345\241\253\346\241\206.png"                 | Bin
+ "res/\345\272\225\350\211\262.png"                 | Bin
+ rightview.h                                        |   0
+ src.qrc                                            |   0
+ tabwidget.h                                        |   0
+ testutils.h                                        |   0
+ ui_main.h                                          |   0
+ 162 files changed, 180 insertions(+), 1365 deletions(-)
+
+commit 7e0488f58805d260d712df00e5feb068ff60dcbe
+Author: jacket <jacket.1995@qq.com>
+Date:   Wed Jan 3 20:41:50 2018 +0800
+
+    添加功能
+    
+    1.修改了调试界面，更适合用户使用
+    2.添加的保存图片的功能
+    3.监听增加了延时，对服务器负担太重了
+
+ Action/action.cpp             |  23 +++
+ Action/action.h               |   2 +
+ ChildView/cameraview.cpp      |   9 +-
+ ChildView/ui_camera.h         |  10 +-
+ Dialog/appthread.cpp          |   2 +-
+ Dialog/modeldialog.h          |  10 +-
+ QTConfig.pro                  |   6 +-
+ QTConfig.pro.user             |   2 +-
+ SerialDialog/recvpaser.cpp    |   6 +
+ SerialDialog/recvpaser.h      |  11 ++
+ SerialDialog/serialdialog.cpp | 389 ++++++++++++++++++++++++++++++++++++++----
+ SerialDialog/serialdialog.h   |  21 ++-
+ SerialDialog/serialdialog.ui  | 357 ++++++++++++++++++++++++++++++++------
+ global.qss                    |   3 +
+ 14 files changed, 740 insertions(+), 111 deletions(-)
+
+commit 56f33930129f7a66b1f82fc8c609a2ddb016dc68
+Author: jacket <jacket.1995@qq.com>
+Date:   Wed Jan 3 14:05:14 2018 +0800
+
+    version 2.0
+    
+    version 2.0
+
+ 64.ico                                             | Bin 0 -> 16958 bytes
+ Action/action.cpp                                  |   0
+ Action/action.h                                    |   0
+ Action/globalaction.cpp                            |   0
+ Action/globalaction.h                              |   0
+ ChildView/EditGroup.cpp                            |   0
+ ChildView/EditGroup.h                              |   0
+ ChildView/VideoForm.h.Co5644                       | 107 +++++++
+ ChildView/VideoForm.h~                             | 106 +++++++
+ ChildView/cameraview.cpp                           |   0
+ ChildView/cameraview.h                             |   0
+ ChildView/clabel.cpp                               |   0
+ ChildView/clabel.h                                 |   0
+ ChildView/common.h                                 |   0
+ ChildView/customframe.h                            |   0
+ ChildView/customlineedit.cpp                       |   0
+ ChildView/customlineedit.h                         |   0
+ ChildView/serialview.cpp                           |   0
+ ChildView/serialview.h                             |   0
+ ChildView/udpvideothread.h                         |   0
+ ChildView/ui_camera.h                              |   0
+ ChildView/ui_serial.h                              |   0
+ ChildView/ui_window.h                              |   0
+ ChildView/videocontrolthread.cpp                   |   2 +
+ ChildView/videocontrolthread.h                     |   0
+ ChildView/videoform.cpp                            |  10 +-
+ ChildView/videoform.h                              |   0
+ ChildView/videothread.cpp                          |   0
+ ChildView/videothread.h                            |   0
+ ChildView/windowview.cpp                           |   0
+ ChildView/windowview.h                             |   0
+ Client/Generate.cpp                                |   0
+ Client/Generate.h                                  |   0
+ Client/JsonScanner.cpp                             |   0
+ Client/JsonScanner.h                               |   0
+ Client/Scanner.cpp                                 |   0
+ Client/Scanner.h                                   |   0
+ Client/SocketClient.cpp                            |   0
+ Client/SocketClient.h                              |   0
+ Client/UDPSocket.cpp                               |   0
+ Client/UDPSocket.h                                 |   0
+ Client/clientfactory.cpp                           |   0
+ Client/clientfactory.h                             |   0
+ CustomTabWidget/CustomTabWidget.cpp                |   0
+ CustomTabWidget/CustomTabWidget.h                  |   0
+ CustomTabWidget/custlabel.cpp                      |   0
+ CustomTabWidget/custlabel.h                        |   0
+ CustomTabWidget/tabcomb.cpp                        |   0
+ CustomTabWidget/tabcomb.cpp.Ql3922                 |   0
+ CustomTabWidget/tabcomb.h                          |   0
+ Dialog/appthread.cpp                               |   0
+ Dialog/appthread.h                                 |   0
+ Dialog/modeldialog.cpp                             |   0
+ Dialog/modeldialog.h                               |   0
+ Dialog/ui_modeldialog.h                            |   0
+ Helper/messagehelper.cpp                           |   0
+ Helper/messagehelper.h                             |   0
+ ImageSelectedView/RectUtils.h                      |   0
+ ImageSelectedView/imagebufftrans.h                 |   0
+ ImageSelectedView/imageform.cpp                    |   0
+ ImageSelectedView/imageform.h                      |   0
+ ImageSelectedView/imagelabel.cpp                   |   0
+ ImageSelectedView/imagelabel.h                     |   0
+ ImageSelectedView/ui_image.h                       |   0
+ LeftWidget/leftwidget.cpp                          |   0
+ LeftWidget/leftwidget.h                            |   0
+ LeftWidget/ui_left.h                               |   0
+ Login/logindialog.cpp                              |   0
+ Login/logindialog.h                                |   0
+ Login/ui_logindialog.h                             |   0
+ QTConfig.pro                                       |  12 +-
+ QTConfig.pro.user                                  |  50 +--
+ QTConfig.pro.user.552e84c                          | 318 +++++++++++++++++++
+ QTConfig.pro.user.e3f88c8                          | 336 +++++++++++++++++++++
+ QtWaitingSpinner/LICENSE                           |   0
+ QtWaitingSpinner/waitingspinnerwidget.cpp          |   0
+ QtWaitingSpinner/waitingspinnerwidget.h            |   0
+ SerialDialog/serialdialog.cpp                      | 177 +++++++++++
+ SerialDialog/serialdialog.h                        |  38 +++
+ SerialDialog/serialdialog.ui                       | 256 ++++++++++++++++
+ TabWidget/customtabstyle.h                         |   0
+ TabWidget/htabwidget.cpp                           |   0
+ TabWidget/htabwidget.h                             |   0
+ TabWidget/idtable.cpp                              |   0
+ TitleBar/titlebar.cpp                              |   0
+ TitleBar/titlebar.h                                |   0
+ Video/SocketServer.cpp                             |   0
+ Video/SocketServer.h                               |   0
+ Video/buffertransfer.cpp                           |   0
+ Video/buffertransfer.h                             |   0
+ Video/framepackage.h                               |   0
+ Video/imageutils.cpp                               |  32 +-
+ Video/imageutils.h                                 |   4 +-
+ Video/videobuffer.cpp                              |   0
+ Video/videobuffer.h                                |   0
+ Video/videodescriptorthread.cpp                    |   0
+ Video/videodescriptorthread.h                      |   0
+ Video/videonode.cpp                                |   0
+ Video/videonode.h                                  |   0
+ Video/videorecipient.cpp                           |   0
+ Video/videorecipient.h                             |   0
+ Video/videoserver.cpp                              |   0
+ Video/videoserver.h                                |   0
+ app.cpp                                            |   0
+ app.h                                              |   0
+ childview.h                                        |   0
+ global.qss                                         |   0
+ globalcommon.h                                     |   0
+ idtable.h                                          |   0
+ imageselectedview.h                                |   0
+ jsoncpp/json/autolink.h                            |   0
+ jsoncpp/json/config.h                              |   0
+ jsoncpp/json/features.h                            |   0
+ jsoncpp/json/forwards.h                            |   0
+ jsoncpp/json/json.h                                |   0
+ jsoncpp/json/reader.h                              |   0
+ jsoncpp/json/value.h                               |   0
+ jsoncpp/json/writer.h                              |   0
+ jsoncpp/json_batchallocator.h                      |   0
+ jsoncpp/json_internalarray.inl                     |   0
+ jsoncpp/json_internalmap.inl                       |   0
+ jsoncpp/json_reader.cpp                            |   0
+ jsoncpp/json_value.cpp                             |   0
+ jsoncpp/json_valueiterator.inl                     |   0
+ jsoncpp/json_writer.cpp                            |   0
+ main.cpp                                           |   0
+ mainwindow.cpp                                     |   7 +
+ mainwindow.h                                       |   1 +
+ mainwindow.ui                                      |   0
+ res/back_tabbar.png                                | Bin
+ res/btn_close_hover.png                            | Bin
+ res/btn_close_origin.png                           | Bin
+ res/btn_max_hover.png                              | Bin
+ res/btn_max_origin.png                             | Bin
+ res/btn_min_hover.png                              | Bin
+ res/btn_min_origin.png                             | Bin
+ res/btn_pause.png                                  | Bin
+ res/btn_right_hover.png                            | Bin
+ res/btn_right_org.png                              | Bin
+ res/btn_right_unable.png                           | Bin
+ res/btn_setting_hover.png                          | Bin
+ res/btn_setting_origin.png                         | Bin
+ res/btn_start.png                                  | Bin
+ res/btn_timeout.png                                | Bin
+ res/inputbtn_normal.png                            | Bin
+ res/main_border.png                                | Bin
+ res/main_border_3bian.png                          | Bin
+ res/main_title.png                                 | Bin
+ res/tab_org.png                                    | Bin
+ res/tab_selected.png                               | Bin
+ res/tab_selected_arrow.png                         | Bin
+ "res/\345\217\202\350\200\203\345\233\276.jpg"     | Bin
+ ...17\263\350\276\271\345\272\225\350\211\262.png" | Bin
+ "res/\345\241\253\346\241\206.png"                 | Bin
+ "res/\345\272\225\350\211\262.png"                 | Bin
+ rightview.h                                        |   0
+ src.qrc                                            |   0
+ tabwidget.h                                        |   0
+ testutils.h                                        |   0
+ ui_main.h                                          |   5 +
+ 160 files changed, 1404 insertions(+), 57 deletions(-)
+
+commit ffe4bbfa91c34415cdd1023ac19e7ead728c170e
+Author: jacket <jacket.1995@qq.com>
+Date:   Thu Dec 21 09:40:47 2017 +0800
+
+    Linux下尝试了libjpeg库，色块依然存在
+
+ Video/imageutils.cpp | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit 66a5a94ba56095455e4be757764ce03c97953402
+Author: jacket <jacket.1995@qq.com>
+Date:   Thu Dec 21 09:33:41 2017 +0800
+
+    视频好了
+
+ Action/globalaction.cpp                            |  14 +
+ Action/globalaction.h                              |  30 ++
+ ChildView/common.h                                 |  67 ++++
+ ChildView/customframe.h                            |  78 +++++
+ ChildView/customlineedit.cpp                       |  97 ++++++
+ ChildView/customlineedit.h                         | 126 ++++++++
+ ChildView/udpvideothread.h                         |  70 +++++
+ ChildView/videocontrolthread.cpp                   |  97 ++++++
+ ChildView/videocontrolthread.h                     |  37 +++
+ ChildView/videoform.cpp                            | 281 +++++++++++++++++
+ ChildView/videoform.h                              | 118 ++++++++
+ ChildView/videothread.cpp                          | 150 +++++++++
+ ChildView/videothread.h                            |  74 +++++
+ Client/UDPSocket.cpp                               | 143 +++++++++
+ Client/UDPSocket.h                                 |  76 +++++
+ Client/clientfactory.cpp                           |  18 ++
+ Client/clientfactory.h                             |  26 ++
+ CustomTabWidget/CustomTabWidget.cpp                | 135 +++++++++
+ CustomTabWidget/CustomTabWidget.h                  |  44 +++
+ CustomTabWidget/custlabel.cpp                      |  11 +
+ CustomTabWidget/custlabel.h                        |  20 ++
+ CustomTabWidget/tabcomb.cpp                        |  30 ++
+ CustomTabWidget/tabcomb.cpp.Ql3922                 |  11 +
+ CustomTabWidget/tabcomb.h                          |  23 ++
+ Dialog/appthread.cpp                               |  78 +++++
+ Dialog/appthread.h                                 |  37 +++
+ Dialog/modeldialog.cpp                             | 244 +++++++++++++++
+ Dialog/modeldialog.h                               |  73 +++++
+ Dialog/ui_modeldialog.h                            | 117 +++++++
+ Login/logindialog.cpp                              |  25 ++
+ Login/logindialog.h                                |  25 ++
+ Login/ui_logindialog.h                             |  52 ++++
+ QTConfig.pro.user                                  | 336 +++++++++++++++++++++
+ QtWaitingSpinner/LICENSE                           |  21 ++
+ QtWaitingSpinner/waitingspinnerwidget.cpp          | 277 +++++++++++++++++
+ QtWaitingSpinner/waitingspinnerwidget.h            | 114 +++++++
+ TitleBar/titlebar.cpp                              | 137 +++++++++
+ TitleBar/titlebar.h                                |  62 ++++
+ Video/SocketServer.cpp                             | 292 ++++++++++++++++++
+ Video/SocketServer.h                               | 100 ++++++
+ Video/buffertransfer.cpp                           |  62 ++++
+ Video/buffertransfer.h                             |  33 ++
+ Video/framepackage.h                               |  29 ++
+ Video/imageutils.cpp                               | 163 ++++++++++
+ Video/imageutils.h                                 |  23 ++
+ Video/videobuffer.cpp                              | 133 ++++++++
+ Video/videobuffer.h                                |  45 +++
+ Video/videodescriptorthread.cpp                    |  21 ++
+ Video/videodescriptorthread.h                      |  25 ++
+ Video/videonode.cpp                                | 109 +++++++
+ Video/videonode.h                                  |  38 +++
+ Video/videorecipient.cpp                           |  82 +++++
+ Video/videorecipient.h                             |  44 +++
+ Video/videoserver.cpp                              | 226 ++++++++++++++
+ Video/videoserver.h                                |  39 +++
+ app.cpp                                            |  21 ++
+ app.h                                              |  63 ++++
+ globalcommon.h                                     |  31 ++
+ res/back_tabbar.png                                | Bin 0 -> 4258 bytes
+ res/btn_close_hover.png                            | Bin 0 -> 3540 bytes
+ res/btn_close_origin.png                           | Bin 0 -> 3530 bytes
+ res/btn_max_hover.png                              | Bin 0 -> 2939 bytes
+ res/btn_max_origin.png                             | Bin 0 -> 3175 bytes
+ res/btn_min_hover.png                              | Bin 0 -> 2945 bytes
+ res/btn_min_origin.png                             | Bin 0 -> 3057 bytes
+ res/btn_pause.png                                  | Bin 0 -> 11988 bytes
+ res/btn_right_hover.png                            | Bin 0 -> 3276 bytes
+ res/btn_right_org.png                              | Bin 0 -> 3235 bytes
+ res/btn_right_unable.png                           | Bin 0 -> 2965 bytes
+ res/btn_setting_hover.png                          | Bin 0 -> 3125 bytes
+ res/btn_setting_origin.png                         | Bin 0 -> 3114 bytes
+ res/btn_start.png                                  | Bin 0 -> 14407 bytes
+ res/btn_timeout.png                                | Bin 0 -> 6205 bytes
+ res/inputbtn_normal.png                            | Bin 0 -> 3152 bytes
+ res/main_border.png                                | Bin 0 -> 8193 bytes
+ res/main_border_3bian.png                          | Bin 0 -> 5527 bytes
+ res/main_title.png                                 | Bin 0 -> 361 bytes
+ res/tab_org.png                                    | Bin 0 -> 2976 bytes
+ res/tab_selected.png                               | Bin 0 -> 2953 bytes
+ res/tab_selected_arrow.png                         | Bin 0 -> 3407 bytes
+ "res/\345\217\202\350\200\203\345\233\276.jpg"     | Bin 0 -> 191962 bytes
+ ...17\263\350\276\271\345\272\225\350\211\262.png" | Bin 0 -> 3944 bytes
+ "res/\345\241\253\346\241\206.png"                 | Bin 0 -> 2886 bytes
+ "res/\345\272\225\350\211\262.png"                 | Bin 0 -> 5506 bytes
+ 84 files changed, 4953 insertions(+)
+
+commit b5daba2412c1c75408778bb9b08224d688185ee4
+Author: jacket <jacket.1995@qq.com>
+Date:   Thu Dec 21 09:25:02 2017 +0800
+
+    视频好了
+
+ Action/action.cpp                  |  76 ++++++---
+ Action/action.h                    |  13 +-
+ ChildView/EditGroup.cpp            |  38 +++++
+ ChildView/EditGroup.h              |  30 +++-
+ ChildView/cameraview.cpp           | 141 +++++++++++++---
+ ChildView/cameraview.h             |  15 +-
+ ChildView/serialview.cpp           |  87 ++++++++--
+ ChildView/serialview.h             |  24 ++-
+ ChildView/ui_camera.h              | 204 ++++++++++++++--------
+ ChildView/ui_serial.h              | 124 ++++++++------
+ ChildView/ui_window.h              | 102 ++++++-----
+ ChildView/windowview.cpp           | 161 +++++++++++++++---
+ ChildView/windowview.h             |  24 ++-
+ Client/SocketClient.cpp            | 136 ++++++++++-----
+ Client/SocketClient.h              |  30 +++-
+ Helper/messagehelper.cpp           |  12 ++
+ Helper/messagehelper.h             |  13 ++
+ ImageSelectedView/RectUtils.h      |  13 ++
+ ImageSelectedView/imagebufftrans.h |  17 +-
+ ImageSelectedView/imageform.cpp    |  61 +++++--
+ ImageSelectedView/imageform.h      |  18 +-
+ ImageSelectedView/imagelabel.cpp   |  75 +++++++--
+ ImageSelectedView/imagelabel.h     |  16 ++
+ ImageSelectedView/ui_image.h       |   8 +-
+ LeftWidget/leftwidget.cpp          |  30 +++-
+ LeftWidget/leftwidget.h            |  13 ++
+ LeftWidget/ui_left.h               |  13 ++
+ QTConfig.pro                       |  66 +++++++-
+ QTConfig.pro.user                  | 336 -------------------------------------
+ TabWidget/customtabstyle.h         |  28 +++-
+ TabWidget/htabwidget.cpp           |  26 ---
+ TabWidget/htabwidget.h             |   8 +-
+ TabWidget/idtable.cpp              |  12 ++
+ childview.h                        |  13 ++
+ global.qss                         | 219 +++++++++++++++++++++++-
+ idtable.h                          |  24 +++
+ imageselectedview.h                |  13 ++
+ jsoncpp/json/writer.h              |   6 +-
+ jsoncpp/json_writer.cpp            |   7 +-
+ main.cpp                           |  25 ++-
+ mainwindow.cpp                     | 166 +++++++++++++-----
+ mainwindow.h                       |  25 ++-
+ rightview.h                        |  12 ++
+ src.qrc                            |  24 +++
+ tabwidget.h                        |  14 ++
+ testutils.h                        |  13 ++
+ ui_main.h                          | 129 +++++++++++---
+ 47 files changed, 1852 insertions(+), 808 deletions(-)
+
+commit d1427cce29edb4321859e59ece6e1292b5afc3d3
+Author: jacket <jacket.1995@qq.com>
+Date:   Wed Nov 15 11:01:06 2017 +0800
+
+    为了改变界面做准备
+
+ Action/action.cpp                             |  20 ++--
+ Action/action.h                               |   0
+ ChildView/EditGroup.cpp                       |   6 ++
+ ChildView/EditGroup.h                         |  16 +++
+ ChildView/cameraview.cpp                      |   0
+ ChildView/cameraview.h                        |   0
+ ChildView/clabel.cpp                          |   0
+ ChildView/clabel.h                            |   0
+ ChildView/serialview.cpp                      |  10 ++
+ ChildView/serialview.h                        |   3 +
+ ChildView/ui_camera.h                         |   3 +
+ ChildView/ui_serial.h                         |   5 +
+ ChildView/ui_window.h                         |   2 +-
+ ChildView/windowview.cpp                      |   0
+ ChildView/windowview.h                        |   0
+ Client/Generate.cpp                           |   0
+ Client/Generate.h                             |   1 +
+ Client/JsonScanner.cpp                        |   2 +
+ Client/JsonScanner.h                          |   0
+ Client/Scanner.cpp                            |   0
+ Client/Scanner.h                              |   1 +
+ Client/SocketClient.cpp                       | 137 +++++++++++++++++++++++---
+ Client/SocketClient.h                         |  35 +++++--
+ messagehelper.cpp => Helper/messagehelper.cpp |   0
+ messagehelper.h => Helper/messagehelper.h     |   0
+ ImageSelectedView/RectUtils.h                 |   0
+ ImageSelectedView/imagebufftrans.h            |   0
+ ImageSelectedView/imageform.cpp               |  25 +++--
+ ImageSelectedView/imageform.h                 |   6 +-
+ ImageSelectedView/imagelabel.cpp              |  10 +-
+ ImageSelectedView/imagelabel.h                |   0
+ ImageSelectedView/ui_image.h                  |   0
+ LeftWidget/leftwidget.cpp                     |   0
+ LeftWidget/leftwidget.h                       |   0
+ LeftWidget/ui_left.h                          |   0
+ QTConfig.pro                                  |  14 ++-
+ QTConfig.pro.user                             |   2 +-
+ TabWidget/customtabstyle.h                    |   0
+ TabWidget/htabwidget.cpp                      |   0
+ TabWidget/htabwidget.h                        |   0
+ TabWidget/idtable.cpp                         |   0
+ childview.h                                   |   0
+ global.qss                                    |   2 +
+ idtable.h                                     |   0
+ imageselectedview.h                           |   0
+ jsoncpp/json/autolink.h                       |   0
+ jsoncpp/json/config.h                         |   0
+ jsoncpp/json/features.h                       |   0
+ jsoncpp/json/forwards.h                       |   0
+ jsoncpp/json/json.h                           |   0
+ jsoncpp/json/reader.h                         |   0
+ jsoncpp/json/value.h                          |   0
+ jsoncpp/json/writer.h                         |   0
+ jsoncpp/json_batchallocator.h                 |   0
+ jsoncpp/json_internalarray.inl                |   0
+ jsoncpp/json_internalmap.inl                  |   0
+ jsoncpp/json_reader.cpp                       |   0
+ jsoncpp/json_value.cpp                        |   0
+ jsoncpp/json_valueiterator.inl                |   0
+ jsoncpp/json_writer.cpp                       |   0
+ main.cpp                                      |   9 ++
+ mainwindow.cpp                                |   1 -
+ mainwindow.h                                  |   0
+ mainwindow.ui                                 |   0
+ rightview.h                                   |   0
+ src.qrc                                       |   5 +
+ tabwidget.h                                   |   0
+ tabwidgetaction.h                             |  22 -----
+ testutils.h                                   |  19 ++++
+ ui_main.h                                     |   1 +
+ 70 files changed, 284 insertions(+), 73 deletions(-)
+
+commit 622b05e10f60a7f2b45a64f350b675fc87f58c1a
+Author: jacket <jacket.1995@qq.com>
+Date:   Mon Nov 13 12:00:44 2017 +0800
+
+    Version 1.0
+
+ Action/action.cpp                  |   88 ++
+ Action/action.h                    |   48 +
+ ChildView/cameraview.cpp           |  201 +++++
+ ChildView/cameraview.h             |   73 ++
+ ChildView/clabel.cpp               |   36 +
+ ChildView/clabel.h                 |   33 +
+ ChildView/serialview.cpp           |  191 ++++
+ ChildView/serialview.h             |   62 ++
+ ChildView/ui_camera.h              |  140 +++
+ ChildView/ui_serial.h              |  187 ++++
+ ChildView/ui_window.h              |  151 ++++
+ ChildView/windowview.cpp           |  214 +++++
+ ChildView/windowview.h             |   69 ++
+ Client/Generate.cpp                |   52 ++
+ Client/Generate.h                  |   58 ++
+ Client/JsonScanner.cpp             |  166 ++++
+ Client/JsonScanner.h               |   96 ++
+ Client/Scanner.cpp                 |   90 ++
+ Client/Scanner.h                   |   42 +
+ Client/SocketClient.cpp            |  179 ++++
+ Client/SocketClient.h              |   60 ++
+ ImageSelectedView/RectUtils.h      |   70 ++
+ ImageSelectedView/imagebufftrans.h |   83 ++
+ ImageSelectedView/imageform.cpp    |  187 ++++
+ ImageSelectedView/imageform.h      |   80 ++
+ ImageSelectedView/imagelabel.cpp   |  143 +++
+ ImageSelectedView/imagelabel.h     |   52 ++
+ ImageSelectedView/ui_image.h       |   72 ++
+ LeftWidget/leftwidget.cpp          |   32 +
+ LeftWidget/leftwidget.h            |   24 +
+ LeftWidget/ui_left.h               |   64 ++
+ QTConfig.pro                       |   89 ++
+ QTConfig.pro.user                  |  336 +++++++
+ TabWidget/customtabstyle.h         |   70 ++
+ TabWidget/htabwidget.cpp           |   50 ++
+ TabWidget/htabwidget.h             |   33 +
+ TabWidget/idtable.cpp              |   38 +
+ childview.h                        |    8 +
+ idtable.h                          |   47 +
+ imageselectedview.h                |    6 +
+ jsoncpp/json/autolink.h            |   19 +
+ jsoncpp/json/config.h              |   43 +
+ jsoncpp/json/features.h            |   42 +
+ jsoncpp/json/forwards.h            |   39 +
+ jsoncpp/json/json.h                |   10 +
+ jsoncpp/json/reader.h              |  196 ++++
+ jsoncpp/json/value.h               | 1069 ++++++++++++++++++++++
+ jsoncpp/json/writer.h              |  174 ++++
+ jsoncpp/json_batchallocator.h      |  125 +++
+ jsoncpp/json_internalarray.inl     |  448 ++++++++++
+ jsoncpp/json_internalmap.inl       |  607 +++++++++++++
+ jsoncpp/json_reader.cpp            |  885 +++++++++++++++++++
+ jsoncpp/json_value.cpp             | 1718 ++++++++++++++++++++++++++++++++++++
+ jsoncpp/json_valueiterator.inl     |  292 ++++++
+ jsoncpp/json_writer.cpp            |  829 +++++++++++++++++
+ main.cpp                           |   11 +
+ mainwindow.cpp                     |   81 ++
+ mainwindow.h                       |   28 +
+ mainwindow.ui                      |   43 +
+ messagehelper.cpp                  |   24 +
+ messagehelper.h                    |   15 +
+ rightview.h                        |    1 +
+ tabwidget.h                        |    6 +
+ tabwidgetaction.h                  |   22 +
+ ui_main.h                          |  101 +++
+ 65 files changed, 10548 insertions(+)
+
+commit 692188d0e119cf1f40fd7afc7d4343c1bc74acc2
+Author: jacket <jacket.1995@qq.com>
+Date:   Mon Nov 13 11:59:43 2017 +0800
+
+    initial commit

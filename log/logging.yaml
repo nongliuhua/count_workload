@@ -1,0 +1,50 @@
+version: 1
+disable_existing_loggers: False
+formatters:
+    simple: 
+        format: "%(asctime)s | %(name)s | %(levelname)s | %(message)s"
+    simple_1:
+        format: "%(asctime)s|%(name)s|%(levelname)s
+                 |filename= %(filename)s
+                 |modulename= %(module)s
+                 |funcname= %(funcName)s
+                 |line= %(lineno)d
+                 |\n message= %(message)s"
+handlers: 
+    console:
+        class: logging.StreamHandler
+        level: DEBUG
+        formatter: simple_1
+    info_file_handler:
+        class: logging.handlers.RotatingFileHandler
+        level: INFO
+        formatter: simple_1
+        filename: .\log\info.log
+        maxBytes: 1024
+        backupCount: 0
+        encoding: "utf8"
+    debug_file_handler:
+        class: logging.handlers.RotatingFileHandler
+        level: DEBUG
+        formatter: simple_1
+        filename: .\log\debug.log
+        maxBytes: 1024
+        backupCount: 0
+        encoding: "utf8"
+    warn_file_handler:
+        class: logging.handlers.RotatingFileHandler
+        level: WARNING
+        formatter: simple_1
+        filename: .\log\warn.log
+        maxBytes: 1024
+        backupCount: 0
+        encoding: "utf8"
+loggers:
+    fileLogger:
+        level: DEBUG
+        handlers: [console, info_file_handler,debug_file_handler,warn_file_handler]
+        propagate: no
+roots:
+    level: DEBUG
+    handlers: [console]
+    propagate: True
