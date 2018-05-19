@@ -13,33 +13,90 @@
 # Modification History	:
 # Data			By			   Version			Change Description
 # =========================================================================
-# 2018-5-18		nongliuhua	   0.1				Original
+# 2018-5-19 	nongliuhua	   0.1				Original
 # -----------------------------------------------------------------------*/
 #
 # ************************************************************************/
 '''
-import os
+import git
+import pandas as pd
 import re
-import sys
-
 from log.log_yaml import *
 # log.info("aaaaaaaaaaa")
 # log.debug("debug debug .....")
-import os
 
-def get_git_data():
-    filename_1='run_git.py'
-    filename_2=r'.\data\1.txt'
-    cmd='python '+filename_1+'>'+filename_2
-    print(cmd)
-    os.system(cmd)
-    with open(filename_2, 'r',encoding='utf-8') as f:
-         r = f.read()
+
+def get_git_data(git_path):
+    '''
+    使用pygit模块的相关功能获得GIT的信息，
+    进如GIT所在的目录后运行得到结果
+    返回结果的长字符串
+    :param git_path:
+    :return:
+    '''
+    path = git_path
+    # TODO(nongliuhua):一个实际的不存在的路径 的特例处理
+    # TODO(nongliuhua):一个实际的不存在.git目录的路径 的特例处理
+    os.chdir(path)
+    repo = git.Repo(git_path)
+    # r = repo.git.log('--stat', '--date=iso')  # git log --stat  --date=iso
+    r = repo.git.log( '--numstat','--date=iso')
+    # print (r)
     return r
-c=get_git_data()
-print(c)
-print(type(c))
 
-c=c.split('\n')
-print(type(c))
-print(len(c))
+
+def transform_git_data_to_DataFrame(raw_git_data):
+    '''
+    将输入的包含git仓库信息的长字符串解析为DataFrame的数据结构
+    :param raw_git_data:
+    :return:
+    '''
+    raw_data = raw_git_data
+    db_files = pd.DataFrame(columns=['commit',
+                                     'author',
+                                     'file_name',
+                                     'commit_date',
+                                     'commit_time',
+                                     'insert_line',
+                                     'delet_line'])
+
+    data = raw_data.split('\n')
+    i=0
+    for x in data:
+        if x.startswith('commit'):
+            c = x.split(' ')
+            commit = c[1]
+        elif x.startswith('Author:'):
+            c = x.split(' ')
+            author = c[1]
+        elif x.startswith('Date:'):
+            c = x.split(' ')
+            commit_date = c[3]
+            commit_time = c[4]
+        else:
+            pattern=re.compile(r'(\d+)\s+(\d+)\s+(\S+)')
+            d=re.match(pattern,x)
+            if d!=None:
+                insert_line=d.group(1)
+                delet_line=d.group(2)
+                file_name=d.group(3)
+                file_dict = {'commit':commit,
+                             'author':author,
+                             'file_name':file_name,
+                             'commit_date':commit_date,
+                             'commit_time':commit_time,
+                             'insert_line':insert_line,
+                             'delet_line':delet_line
+                             }
+                db_files = db_files.append(file_dict, ignore_index=True)
+    return db_files
+
+
+
+if __name__ == '__main__':
+    git_path = r'C:\Users\Administrator\Desktop\Tube_Recognize_Software'
+    r = get_git_data(git_path)
+    c=transform_git_data_to_DataFrame(r)
+
+
+

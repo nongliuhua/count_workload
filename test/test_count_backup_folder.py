@@ -40,34 +40,33 @@ def test_get_project_name_5():
     assert a == b
 
 
-def get_author_name_1():
+def test_get_author_name_1():
     path_name = r'Z:\12 备份\17-许北林\CRP-TemperControlBoard-xubeilin-2018-05-15-幼稚细胞温控板\CMSIS'
     a = get_author_name(path_name)
     b = '许北林'
     assert a == b
 
 
-def get_author_name_2():
+def test_get_author_name_2():
     path_name = r'Z:\12 备份\17-许北林'
     a = get_author_name(path_name)
     b = '许北林'
     assert a == b
 
 
-def get_author_name_3():
+def test_get_author_name_3():
     path_name = r'Z:\12 备份\17---许北林'
     a = get_author_name(path_name)
     b = '许北林'
-    print(b)
     assert a == b
 
 
-def get_author_name_4():
+def test_get_author_name_4():
     path_name = r'Z:\12 备份'
     a = get_author_name(path_name)
     b = ''
-    print(b)
     assert a == b
+
 
 # if __name__ == '__main__':
     # test_get_project_name_1()
